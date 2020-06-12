@@ -8,10 +8,15 @@
         <e p="_Project" t="Include">
           <e p="Sources" t="Include">
             <e p="Player" t="Include">
-              <e p="FloatExtension.cs" t="Include" />
+              <e p="MouseClickDrag.cs" t="Include" />
+              <e p="PlayerCameraController.cs" t="Include" />
               <e p="PlayerInputController.cs" t="Include" />
               <e p="PlayerShipAnimationController.cs" t="Include" />
               <e p="PlayerShipController.cs" t="Include" />
+              <e p="PlayerShipMovement.cs" t="Include" />
+            </e>
+            <e p="Util" t="Include">
+              <e p="FloatExtension.cs" t="Include" />
             </e>
           </e>
         </e>
