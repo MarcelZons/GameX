@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\r_karim\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\r_karim\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_GameX.-672020604.00" t="ExcludeRecursive" />
-    <e p="C:\Users\r_karim\Documents\GameX" t="IncludeRecursive">
+    <e p="C:\_Project\GameX" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_Project" t="Include">
           <e p="Sources" t="Include">
             <e p="Player" t="Include">
+              <e p="FloatExtension.cs" t="Include" />
+              <e p="PlayerInputController.cs" t="Include" />
+              <e p="PlayerShipAnimationController.cs" t="Include" />
               <e p="PlayerShipController.cs" t="Include" />
             </e>
           </e>
@@ -391,5 +392,7 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\r_karim\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\r_karim\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_GameX.593289863.00" t="ExcludeRecursive" />
   </component>
 </project>
