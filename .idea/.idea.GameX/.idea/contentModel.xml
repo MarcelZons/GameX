@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\r_karim\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\r_karim\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_GameX.-672020604.00" t="ExcludeRecursive" />
+    <e p="C:\Users\r_karim\Documents\GameX" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="_Project" t="Include">
+          <e p="Sources" t="Include">
+            <e p="Player" t="Include">
+              <e p="PlayerShipController.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="SpaceCombatKit" t="Include">
+          <e p="Demos" t="Include">
+            <e p="Scenes" t="Include">
+              <e p="SimpleDemos" t="Include">
+                <e p="FlightControls" t="Include">
+                  <e p="TUTORIAL_FlightControls.txt" t="Include" />
+                </e>
+                <e p="ModuleMounts" t="Include">
+                  <e p="TUTORIAL_ModuleMounts.txt" t="Include" />
+                </e>
+                <e p="Triggerables" t="Include">
+                  <e p="TUTORIAL_Triggerables.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Mobile" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="MobileSpacefighterControls.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="AllVehicles" t="Include">
+              <e p="AI" t="Include">
+                <e p="BehaviourBlackboard.cs" t="Include" />
+                <e p="BehaviourSelector.cs" t="Include" />
+                <e p="GroupMember.cs" t="Include" />
+                <e p="Patrolling" t="Include">
+                  <e p="PatrolRoute.cs" t="Include" />
+                </e>
+                <e p="PIDControllers" t="Include">
+                  <e p="PIDController.cs" t="Include" />
+                  <e p="PIDController3D.cs" t="Include" />
+                </e>
+                <e p="VehicleBehaviours" t="Include">
+                  <e p="AIVehicleBehaviour.cs" t="Include" />
+                  <e p="VehicleBehaviourState.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Camera" t="Include">
+                <e p="AuxiliaryCameraController.cs" t="Include" />
+                <e p="AuxiliaryCameraViewSettings.cs" t="Include" />
+                <e p="CameraShaker.cs" t="Include" />
+                <e p="CameraViewTarget.cs" t="Include" />
+                <e p="DeathCameraController.cs" t="Include" />
+                <e p="VehicleCamera.cs" t="Include" />
+                <e p="VehicleCameraController.cs" t="Include" />
+                <e p="VehicleCameraView.cs" t="Include" />
+              </e>
+              <e p="ControlsMenu" t="Include">
+                <e p="ControlsMenuController.cs" t="Include" />
+                <e p="ControlsMenuGroupItem.cs" t="Include" />
+                <e p="ControlsMenuItem.cs" t="Include" />
+              </e>
+              <e p="Demos" t="Include">
+                <e p="DemoMainMenuController.cs" t="Include" />
+                <e p="DynamicAirTargetController.cs" t="Include" />
+                <e p="GameOverMenuController.cs" t="Include" />
+                <e p="PauseMenuController.cs" t="Include" />
+                <e p="StaticAirTargetController.cs" t="Include" />
+              </e>
+              <e p="Effects" t="Include">
+                <e p="EffectsColorManager.cs" t="Include" />
+                <e p="EnergyShield" t="Include">
+                  <e p="EnergyShield.shader" t="Include" />
+                  <e p="EnergyShieldController.cs" t="Include" />
+                </e>
+                <e p="EnterExit" t="Include">
+                  <e p="EnterExitEffect.shader" t="Include" />
+                </e>
+                <e p="ExhaustJet" t="Include">
+                  <e p="JetExhaustVisualEffectsController.cs" t="Include" />
+                </e>
+                <e p="FlybyParticleController.cs" t="Include" />
+                <e p="Rumbles" t="Include">
+                  <e p="AddRumble.cs" t="Include" />
+                  <e p="RumbleManager.cs" t="Include" />
+                </e>
+                <e p="Shaker.cs" t="Include" />
+              </e>
+              <e p="Engines" t="Include">
+                <e p="Engines.cs" t="Include" />
+                <e p="PoweredVehicleEngines3D.cs" t="Include" />
+                <e p="VehicleEngines3D.cs" t="Include" />
+              </e>
+              <e p="EnterExitVehicles" t="Include">
+                <e p="VehicleEnterExitManager.cs" t="Include" />
+              </e>
+              <e p="GameAgents" t="Include">
+                <e p="GameAgent.cs" t="Include" />
+                <e p="GameAgentManager.cs" t="Include" />
+              </e>
+              <e p="Health" t="Include">
+                <e p="Damageable.cs" t="Include" />
+                <e p="DamageableModuleLinker.cs" t="Include" />
+                <e p="DamageEmitter.cs" t="Include" />
+                <e p="DamageReceiver.cs" t="Include" />
+                <e p="DamageSourceType.cs" t="Include" />
+                <e p="Health.cs" t="Include" />
+                <e p="HealthBarController.cs" t="Include" />
+                <e p="HealthType.cs" t="Include" />
+                <e p="HealthTypeDamageValue.cs" t="Include" />
+                <e p="PoweredDamageable.cs" t="Include" />
+                <e p="ShieldModuleLinker.cs" t="Include" />
+              </e>
+              <e p="HologramShaders" t="Include">
+                <e p="Hologram.shader" t="Include" />
+                <e p="HologramOutlined.shader" t="Include" />
+              </e>
+              <e p="HUD" t="Include">
+                <e p="DistanceStringLookup" t="Include">
+                  <e p="HUDDistanceLookup.cs" t="Include" />
+                </e>
+                <e p="FillShader.shader" t="Include" />
+                <e p="Hologram" t="Include">
+                  <e p="HUDHologram.cs" t="Include" />
+                  <e p="HUDHologramController.cs" t="Include" />
+                </e>
+                <e p="HUDComponent.cs" t="Include" />
+                <e p="HUDCursor.cs" t="Include" />
+                <e p="HUDManager.cs" t="Include" />
+                <e p="HUDPowerStorageDisplayController.cs" t="Include" />
+                <e p="HUDRadar.cs" t="Include" />
+                <e p="HUDRadarWidget.cs" t="Include" />
+                <e p="HUDRadarWidgetContainer.cs" t="Include" />
+                <e p="HUDSpeedDisplayController.cs" t="Include" />
+                <e p="HUDTargetBox.cs" t="Include" />
+                <e p="HUDTargetBox_LeadTargetBoxController.cs" t="Include" />
+                <e p="HUDTargetBox_LeadTargetBoxesController.cs" t="Include" />
+                <e p="HUDTargetBox_LockController.cs" t="Include" />
+                <e p="HUDTargetBox_LocksController.cs" t="Include" />
+                <e p="HUDTargetBoxContainer.cs" t="Include" />
+                <e p="HUDTargetBoxes.cs" t="Include" />
+                <e p="HUDTargetBoxesFunctions.cs" t="Include" />
+                <e p="HUDVehicleEnterExit.cs" t="Include" />
+                <e p="LinkedUIBar.cs" t="Include" />
+                <e p="LinkedUIText.cs" t="Include" />
+                <e p="TeamColor.cs" t="Include" />
+              </e>
+              <e p="Input" t="Include">
+                <e p="CustomInput" t="Include">
+                  <e p="CustomInput.cs" t="Include" />
+                  <e p="CustomInputEventItem.cs" t="Include" />
+                  <e p="CustomInputGeneric.cs" t="Include" />
+                  <e p="CustomVehicleInput.cs" t="Include" />
+                  <e p="Editor" t="Include">
+                    <e p="CustomInputDrawer.cs" t="Include" />
+                    <e p="CustomInputEditor.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="InputType.cs" t="Include" />
+                <e p="VehicleInput" t="Include">
+                  <e p="Examples" t="Include">
+                    <e p="MenuControls.cs" t="Include" />
+                    <e p="PlayerTriggerablesInput.cs" t="Include" />
+                    <e p="PlayerVehicleCameraControls.cs" t="Include" />
+                    <e p="PlayerVehicleEnterExitInput.cs" t="Include" />
+                    <e p="PlayerWeaponTargetSelectorInput.cs" t="Include" />
+                    <e p="PowerManagementMenuControls.cs" t="Include" />
+                    <e p="TriggerGroupsMenuControls.cs" t="Include" />
+                  </e>
+                  <e p="GeneralInput.cs" t="Include" />
+                  <e p="TriggerInput.cs" t="Include" />
+                  <e p="VehicleInput.cs" t="Include" />
+                  <e p="VehicleInputType.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Loadout" t="Include">
+                <e p="LoadoutCameraPositionController.cs" t="Include" />
+                <e p="LoadoutDisplayManager.cs" t="Include" />
+                <e p="LoadoutManager.cs" t="Include" />
+                <e p="LoadoutModuleMenuController.cs" t="Include" />
+                <e p="LoadoutMountMenuController.cs" t="Include" />
+                <e p="LoadoutVehicleSpawner.cs" t="Include" />
+                <e p="MenuBarController.cs" t="Include" />
+                <e p="ModuleMenuItemController.cs" t="Include" />
+                <e p="ModuleMountSelectionButtonController.cs" t="Include" />
+                <e p="PlayerData.cs" t="Include" />
+                <e p="PlayerItemManager.cs" t="Include" />
+              </e>
+              <e p="Modules" t="Include">
+                <e p="Module.cs" t="Include" />
+                <e p="ModuleActivationState.cs" t="Include" />
+                <e p="ModuleManager.cs" t="Include" />
+                <e p="ModuleMount.cs" t="Include" />
+                <e p="ModuleType.cs" t="Include" />
+              </e>
+              <e p="Pooling" t="Include">
+                <e p="ObjectPool.cs" t="Include" />
+                <e p="PoolManager.cs" t="Include" />
+              </e>
+              <e p="Power" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="PowerEditor.cs" t="Include" />
+                </e>
+                <e p="IPowerConsumer.cs" t="Include" />
+                <e p="Power.cs" t="Include" />
+                <e p="PoweredSubsystem.cs" t="Include" />
+                <e p="PoweredSubsystemType.cs" t="Include" />
+                <e p="PowerManagementMenuController.cs" t="Include" />
+                <e p="PowerPlant.cs" t="Include" />
+                <e p="SubsystemPowerConfiguration.cs" t="Include" />
+                <e p="SubsystemPowerInfoController.cs" t="Include" />
+              </e>
+              <e p="Radar" t="Include">
+                <e p="LinkableVariables" t="Include">
+                  <e p="Editor" t="Include">
+                    <e p="LinkableVariableDrawer.cs" t="Include" />
+                  </e>
+                  <e p="LinkableVariable.cs" t="Include" />
+                  <e p="LinkableVariableHelpers.cs" t="Include" />
+                  <e p="LinkableVariableType.cs" t="Include" />
+                </e>
+                <e p="LockState.cs" t="Include" />
+                <e p="RadarAudioController.cs" t="Include" />
+                <e p="SubsystemTargetSelector.cs" t="Include" />
+                <e p="TargetLeader.cs" t="Include" />
+                <e p="TargetLocker.cs" t="Include" />
+                <e p="TargetLockerSoundEffectsController.cs" t="Include" />
+                <e p="TargetSelector.cs" t="Include" />
+                <e p="TargetSelectorTargetLocker.cs" t="Include" />
+                <e p="Trackable.cs" t="Include" />
+                <e p="TrackableSceneManager.cs" t="Include" />
+                <e p="TrackableType.cs" t="Include" />
+                <e p="Tracker.cs" t="Include" />
+                <e p="TrackerTargetSelector.cs" t="Include" />
+                <e p="UIColorManager.cs" t="Include" />
+              </e>
+              <e p="Triggerables" t="Include">
+                <e p="Menu" t="Include">
+                  <e p="TriggerableGroupsMenuController.cs" t="Include" />
+                  <e p="TriggerGroupsMenuGroupItemController.cs" t="Include" />
+                  <e p="TriggerGroupsMenuLabelItemController.cs" t="Include" />
+                  <e p="TriggerGroupsMenuTriggerItemController.cs" t="Include" />
+                </e>
+                <e p="Trigger.cs" t="Include" />
+                <e p="Triggerable.cs" t="Include" />
+                <e p="TriggerablesManager.cs" t="Include" />
+              </e>
+              <e p="Utility" t="Include">
+                <e p="AudioController.cs" t="Include" />
+                <e p="Beams" t="Include">
+                  <e p="BeamAudioController.cs" t="Include" />
+                  <e p="BeamController.cs" t="Include" />
+                  <e p="BeamHitEffectController.cs" t="Include" />
+                  <e p="BeamState.cs" t="Include" />
+                  <e p="PoweredBeamController.cs" t="Include" />
+                </e>
+                <e p="CollisionScanner.cs" t="Include" />
+                <e p="ComponentContainer.cs" t="Include" />
+                <e p="CopyTransform.cs" t="Include" />
+                <e p="DeactivateAfterLifetime.cs" t="Include" />
+                <e p="Editor" t="Include">
+                  <e p="HighlightPlayerShip.cs" t="Include" />
+                  <e p="ObstacleAvoidanceDebugging.cs" t="Include" />
+                </e>
+                <e p="EnterExitEffectController.cs" t="Include" />
+                <e p="ExampleBeamHitEffectController.cs" t="Include" />
+                <e p="ExplosionGenerator.cs" t="Include" />
+                <e p="FlashController.cs" t="Include" />
+                <e p="FloatingOrigin" t="Include">
+                  <e p="FloatingOriginChild.cs" t="Include" />
+                  <e p="FloatingOriginManager.cs" t="Include" />
+                  <e p="IFloatingOriginUser.cs" t="Include" />
+                  <e p="TrailRendererOriginShiftManager.cs" t="Include" />
+                </e>
+                <e p="GameState.cs" t="Include" />
+                <e p="GameStateManager.cs" t="Include" />
+                <e p="GimbalController.cs" t="Include" />
+                <e p="HighlightMesh.cs" t="Include" />
+                <e p="IRootTransformUser.cs" t="Include" />
+                <e p="ItemScroller.cs" t="Include" />
+                <e p="LineRendererScroller.cs" t="Include" />
+                <e p="Maneuvring.cs" t="Include" />
+                <e p="MassObjectSpawner.cs" t="Include" />
+                <e p="ParentOnAwake.cs" t="Include" />
+                <e p="RandomRotator.cs" t="Include" />
+                <e p="RandomScaler.cs" t="Include" />
+                <e p="Respawner.cs" t="Include" />
+                <e p="SimpleMenuManager.cs" t="Include" />
+                <e p="Team.cs" t="Include" />
+                <e p="Warp.cs" t="Include" />
+              </e>
+              <e p="Vehicles" t="Include">
+                <e p="Vehicle.cs" t="Include" />
+                <e p="VehicleClass.cs" t="Include" />
+              </e>
+              <e p="Weapons" t="Include">
+                <e p="Guns" t="Include">
+                  <e p="GunWeapon.cs" t="Include" />
+                </e>
+                <e p="Misc" t="Include">
+                  <e p="AimAssist.cs" t="Include" />
+                  <e p="DamageReceiverScanner.cs" t="Include" />
+                  <e p="Detonator.cs" t="Include" />
+                  <e p="HitScanIntervalType.cs" t="Include" />
+                  <e p="PoweredProjectileLauncher.cs" t="Include" />
+                  <e p="Projectile.cs" t="Include" />
+                  <e p="ProjectileLauncher.cs" t="Include" />
+                  <e p="RigidbodyMover.cs" t="Include" />
+                  <e p="TargetProximityTrigger.cs" t="Include" />
+                </e>
+                <e p="Missiles" t="Include">
+                  <e p="Missile.cs" t="Include" />
+                  <e p="MissileGuidanceSystem.cs" t="Include" />
+                  <e p="MissileWeapon.cs" t="Include" />
+                </e>
+                <e p="Turrets" t="Include">
+                  <e p="Camera" t="Include">
+                    <e p="TurretCameraController.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Weapons.cs" t="Include" />
+              </e>
+            </e>
+            <e p="FirstPersonCharacters" t="Include">
+              <e p="Camera" t="Include">
+                <e p="FirstPersonCharacterCameraController.cs" t="Include" />
+              </e>
+              <e p="Controller" t="Include">
+                <e p="FirstPersonCharacterController.cs" t="Include" />
+                <e p="PlayerFirstPersonCharacterInput.cs" t="Include" />
+              </e>
+              <e p="FirstPersonCharacterWeaponParenter.cs" t="Include" />
+            </e>
+            <e p="Spaceships" t="Include">
+              <e p="CameraControllers" t="Include">
+                <e p="CapitalShipCameraController.cs" t="Include" />
+                <e p="SpaceFighterCameraController.cs" t="Include" />
+                <e p="TargetingGimbal.cs" t="Include" />
+              </e>
+              <e p="Effects" t="Include">
+                <e p="EngineSoundEffectsController.cs" t="Include" />
+              </e>
+              <e p="HUD" t="Include">
+                <e p="HUDShipLander.cs" t="Include" />
+              </e>
+              <e p="Input" t="Include">
+                <e p="GimbalControls.cs" t="Include" />
+                <e p="PlayerCapitalShipFlightControls.cs" t="Include" />
+                <e p="PlayerSpaceVehicleFlightControls.cs" t="Include" />
+                <e p="ShipLanderInput.cs" t="Include" />
+                <e p="SpaceshipPatrolBehaviour.cs" t="Include" />
+              </e>
+              <e p="Landing" t="Include">
+                <e p="ShipEnterExitManager.cs" t="Include" />
+                <e p="ShipLander.cs" t="Include" />
+              </e>
+              <e p="SpaceshipAI" t="Include">
+                <e p="AISpaceshipBehaviour.cs" t="Include" />
+                <e p="CapitalShipCombatBehaviour.cs" t="Include" />
+                <e p="ObstacleAvoidanceBehaviour.cs" t="Include" />
+                <e p="ShipPIDController.cs" t="Include" />
+                <e p="SpaceshipAttackBehaviour.cs" t="Include" />
+                <e p="SpaceshipCombatBehaviour.cs" t="Include" />
+                <e p="SpaceshipEvadeBehaviour.cs" t="Include" />
+                <e p="SpaceshipFormationBehaviour.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="UnityStandardAssets" t="Include">
+            <e p="CrossPlatformInputManager.cs" t="Include" />
+            <e p="Joystick.cs" t="Include" />
+            <e p="MobileInput.cs" t="Include" />
+            <e p="StandaloneInput.cs" t="Include" />
+            <e p="VirtualInput.cs" t="Include" />
+          </e>
+        </e>
+        <e p="SpaceFighter" t="Include">
+          <e p="GlassStainedBumpDistort.shader" t="Include" />
+        </e>
+      </e>
+      <e p="GameX.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

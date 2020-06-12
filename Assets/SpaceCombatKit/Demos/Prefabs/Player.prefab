@@ -1,0 +1,922 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1363187084036974}
+  m_IsPrefabParent: 1
+--- !u!1 &1184675281497030
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4974269953904046}
+  - component: {fileID: 114583044472226298}
+  m_Layer: 0
+  m_Name: CameraControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1221599404874704
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4575935687131606}
+  - component: {fileID: 114622932637969102}
+  m_Layer: 0
+  m_Name: TriggerablesControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1363187084036974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4451864936151626}
+  - component: {fileID: 114132858137245394}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1408495590214074
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4640333665634914}
+  - component: {fileID: 114362172618472508}
+  m_Layer: 0
+  m_Name: ShipLanderControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1413911514040650
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4301589757344120}
+  - component: {fileID: 114652590128331560}
+  m_Layer: 0
+  m_Name: CharacterControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1471683514063602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4151475984311506}
+  m_Layer: 0
+  m_Name: GeneralInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1547599518182482
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4393674325751796}
+  - component: {fileID: 114053394548331076}
+  m_Layer: 0
+  m_Name: TargetingControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1649917298206598
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4712128253635910}
+  - component: {fileID: 114539922474783570}
+  m_Layer: 0
+  m_Name: SpaceFighterControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1783377804473170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4058389360811232}
+  m_Layer: 0
+  m_Name: VehicleInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1787669678669988
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4991756633867850}
+  - component: {fileID: 114548186995928328}
+  m_Layer: 0
+  m_Name: GimballedVehicleControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1832071566635576
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4570986469622904}
+  - component: {fileID: 114816551320311724}
+  m_Layer: 0
+  m_Name: CapitalShipControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1832866773446182
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4206802088239274}
+  m_Layer: 0
+  m_Name: SpaceshipControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1905317818128694
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4132840587837532}
+  - component: {fileID: 114712944322573766}
+  m_Layer: 0
+  m_Name: VehicleEnterExitControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4058389360811232
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1783377804473170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4301589757344120}
+  - {fileID: 4206802088239274}
+  - {fileID: 4132840587837532}
+  - {fileID: 4393674325751796}
+  - {fileID: 4991756633867850}
+  - {fileID: 4575935687131606}
+  m_Father: {fileID: 4451864936151626}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4132840587837532
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905317818128694}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 535.1387, y: 412.31146, z: 0.26428223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4058389360811232}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4151475984311506
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471683514063602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4974269953904046}
+  m_Father: {fileID: 4451864936151626}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4206802088239274
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832866773446182}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4712128253635910}
+  - {fileID: 4640333665634914}
+  - {fileID: 4570986469622904}
+  m_Father: {fileID: 4058389360811232}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4301589757344120
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413911514040650}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4058389360811232}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4393674325751796
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1547599518182482}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 535.1387, y: 412.31146, z: 0.26428223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4058389360811232}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4451864936151626
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363187084036974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4058389360811232}
+  - {fileID: 4151475984311506}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4570986469622904
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832071566635576}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4206802088239274}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4575935687131606
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221599404874704}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4058389360811232}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4640333665634914
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1408495590214074}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 535.1387, y: 412.31146, z: 0.26428223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4206802088239274}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4712128253635910
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1649917298206598}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4206802088239274}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4974269953904046
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184675281497030}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 535.1387, y: 412.31146, z: 0.26428223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4151475984311506}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4991756633867850
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1787669678669988}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4058389360811232}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114053394548331076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1547599518182482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e5fb50e1b9b3c499a814a582b7b093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specifyCompatibleGameStates: 1
+  compatibleGameStates: 00000000
+  startingVehicle: {fileID: 0}
+  specifyCompatibleVehicleClasses: 0
+  compatibleVehicleClasses: 
+  nextTargetInput:
+    group: Target Selection
+    action: Next
+    inputType: 0
+    key: 46
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+  previousTargetInput:
+    group: Target Selection
+    action: Previous
+    inputType: 0
+    key: 44
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+  nearestTargetInput:
+    group: Target Selection
+    action: Nearest
+    inputType: 0
+    key: 110
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+  frontTargetInput:
+    group: Target Selection
+    action: Front
+    inputType: 0
+    key: 109
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+--- !u!114 &114132858137245394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363187084036974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37624c68ade23084a912ea929dd48587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: Player
+  isPlayer: 1
+  startingVehicle: {fileID: 0}
+  onEnteredVehicle:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VSX.UniversalVehicleCombat.OnGameAgentEnteredVehicleEventHandler,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onExitedVehicle:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VSX.UniversalVehicleCombat.OnGameAgentExitedVehicleEventHandler, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: EnterGameState
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: GameOver
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: VSX.UniversalVehicleCombat.OnGameAgentDiedEventHandler, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onRevived:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VSX.UniversalVehicleCombat.OnGameAgentRevivedEventHandler, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &114362172618472508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1408495590214074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ef4e8a1777b5b4dac915c64b25f9bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specifyCompatibleGameStates: 1
+  compatibleGameStates: 00000000
+  startingVehicle: {fileID: 0}
+  specifyCompatibleVehicleClasses: 0
+  compatibleVehicleClasses: 
+  landingInput:
+    group: General Controls
+    action: Land/Take Off
+    inputType: 0
+    key: 108
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+--- !u!114 &114539922474783570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1649917298206598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1444117bfd2e447af0d8c4f835bd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specifyCompatibleGameStates: 1
+  compatibleGameStates: 00000000
+  startingVehicle: {fileID: 0}
+  specifyCompatibleVehicleClasses: 1
+  compatibleVehicleClasses: 00000000
+  linkYawAndRoll: 0
+  yawRollRatio: 1
+  mouseSteeringEnabled: 1
+  mouseVerticalInverted: 0
+  mousePitchSensitivity: 1
+  mouseYawSensitivity: 1
+  mouseRollSensitivity: 1
+  mouseDeadRadius: 0
+  keyboardVerticalInverted: 0
+  keyboardSteeringEnabled: 0
+  pitchAxisInput:
+    group: Flight Controls
+    action: Pitch
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Vertical
+  yawAxisInput:
+    group: Flight Controls
+    action: Yaw
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Horizontal
+  rollAxisInput:
+    group: Flight Controls
+    action: Roll
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Roll
+  throttleUpInput:
+    group: Flight Controls
+    action: Throttle Up
+    inputType: 0
+    key: 122
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+  throttleDownInput:
+    group: Flight Controls
+    action: Throttle Down
+    inputType: 0
+    key: 120
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+  throttleSensitivity: 1
+  setThrottle: 0
+  throttleAxisInput:
+    group: Flight Controls
+    action: Move Forward/Backward
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Vertical
+  strafeVerticalInput:
+    group: Flight Controls
+    action: Strafe Vertical
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Strafe Vertical
+  strafeHorizontalInput:
+    group: Flight Controls
+    action: Strafe Horizontal
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Strafe Horizontal
+  boostInput:
+    group: Flight Controls
+    action: Boost
+    inputType: 0
+    key: 9
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+--- !u!114 &114548186995928328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1787669678669988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd0556b104269a4e97e8ef6a5603a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specifyCompatibleGameStates: 0
+  compatibleGameStates: 
+  startingVehicle: {fileID: 0}
+  specifyCompatibleVehicleClasses: 0
+  compatibleVehicleClasses: 
+  gimbalRotationSpeed: 100
+  horizontalRotationInputAxis:
+    group: Gimballed Vehicles
+    action: Look Horizontal
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Mouse X
+  verticalRotationInputAxis:
+    group: Gimballed Vehicles
+    action: Look Vertical
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Mouse Y
+--- !u!114 &114583044472226298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184675281497030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d43a1efdd0fcf44917edebe61a2cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specifyCompatibleGameStates: 1
+  compatibleGameStates: 00000000
+  vehicleCamera: {fileID: 0}
+  cameraViewInputs:
+  - view: 0
+    input:
+      group: Camera Controls
+      action: Select interior view.
+      inputType: 0
+      key: 49
+      mouseButton: 0
+      getAxisRaw: 0
+      axis: 
+  - view: 0
+    input:
+      group: Camera Controls
+      action: Select exterior view.
+      inputType: 0
+      key: 50
+      mouseButton: 0
+      getAxisRaw: 0
+      axis: 
+  freeLookSpeed: 1
+  freeLookModeInput:
+    group: Camera Controls
+    action: Toggle free look mode.
+    inputType: 1
+    key: 0
+    mouseButton: 2
+    getAxisRaw: 0
+    axis: 
+  lookHorizontalInput:
+    group: Camera Controls
+    action: Look horizontally.
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Mouse X
+  lookVerticalInput:
+    group: Camera Controls
+    action: Look vertically.
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Mouse Y
+--- !u!114 &114622932637969102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221599404874704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b8ca3ba93cb4e46bea992c2f269e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specifyCompatibleGameStates: 1
+  compatibleGameStates: 00000000
+  startingVehicle: {fileID: 0}
+  specifyCompatibleVehicleClasses: 0
+  compatibleVehicleClasses: 
+  triggerInputs:
+  - triggerIndex: 0
+    inputSettings:
+      group: Weapons
+      action: Fire guns.
+      inputType: 1
+      key: 0
+      mouseButton: 0
+      getAxisRaw: 0
+      axis: 
+  - triggerIndex: 1
+    inputSettings:
+      group: Weapons
+      action: Fire Missiles
+      inputType: 1
+      key: 0
+      mouseButton: 1
+      getAxisRaw: 0
+      axis: 
+--- !u!114 &114652590128331560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413911514040650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31b77b54695e0a469debf85b3c6c495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specifyCompatibleGameStates: 1
+  compatibleGameStates: 00000000
+  startingVehicle: {fileID: 0}
+  specifyCompatibleVehicleClasses: 0
+  compatibleVehicleClasses: 
+  enableVerticalStrafeInput: 0
+  walkForwardBackwardAxisInput:
+    group: First Person Character
+    action: Walk
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Vertical
+  strafeHorizontalAxisInput:
+    group: First Person Character
+    action: Strafe
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Horizontal
+  strafeVerticalInput:
+    group: First Person Character
+    action: Strafe
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Vertical
+  runInput:
+    group: First Person Character
+    action: Run
+    inputType: 0
+    key: 304
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+  jumpInput:
+    group: First Person Character
+    action: Jump
+    inputType: 0
+    key: 32
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+--- !u!114 &114712944322573766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905317818128694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81d435a2598b3c45b81c2605aef72e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specifyCompatibleGameStates: 1
+  compatibleGameStates: 00000000
+  startingVehicle: {fileID: 0}
+  specifyCompatibleVehicleClasses: 0
+  compatibleVehicleClasses: 
+  gameAgent: {fileID: 114132858137245394}
+  enterExitInput:
+    group: General Vehicle Controls
+    action: Enter/Exit Vehicle
+    inputType: 0
+    key: 102
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+--- !u!114 &114816551320311724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832071566635576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b36234bfc40a5f4092268de6d7cc468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specifyCompatibleGameStates: 1
+  compatibleGameStates: 00000000
+  startingVehicle: {fileID: 0}
+  specifyCompatibleVehicleClasses: 1
+  compatibleVehicleClasses: 03000000
+  yawInput:
+    group: Capital Ships
+    action: Rotate Horizontally
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Roll
+  throttleSensitivity: 0.5
+  throttleUpInput:
+    group: Capital Ships
+    action: Throttle Up
+    inputType: 0
+    key: 122
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+  throttleDownInput:
+    group: Capital Ships
+    action: Throttle Down
+    inputType: 0
+    key: 120
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+  strafeVerticalInput:
+    group: Capital Ships
+    action: Strafe Vertical
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Strafe Vertical
+  strafeHorizontalInput:
+    group: Capital Ships
+    action: Strafe Horizontal
+    inputType: 2
+    key: 0
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: Strafe Horizontal
+  boostInput:
+    group: Capital Ships
+    action: Boost
+    inputType: 0
+    key: 9
+    mouseButton: 0
+    getAxisRaw: 0
+    axis: 
+  shipPIDController:
+    steeringPIDController:
+      controllerXAxis:
+        proportionalCoefficient: 0.01
+        integralCoefficient: 0
+        derivativeCoefficient: 0
+        integralInfluence: 1
+      controllerYAxis:
+        proportionalCoefficient: 0.01
+        integralCoefficient: 0
+        derivativeCoefficient: 0
+        integralInfluence: 1
+      controllerZAxis:
+        proportionalCoefficient: 0.01
+        integralCoefficient: 0
+        derivativeCoefficient: 0
+        integralInfluence: 1
+    movementPIDController:
+      controllerXAxis:
+        proportionalCoefficient: 0.01
+        integralCoefficient: 0
+        derivativeCoefficient: 0
+        integralInfluence: 1
+      controllerYAxis:
+        proportionalCoefficient: 0.01
+        integralCoefficient: 0
+        derivativeCoefficient: 0
+        integralInfluence: 1
+      controllerZAxis:
+        proportionalCoefficient: 0.01
+        integralCoefficient: 0
+        derivativeCoefficient: 0
+        integralInfluence: 1
