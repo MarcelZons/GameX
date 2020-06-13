@@ -18,7 +18,7 @@ namespace gamex.player
         {
             var distance = 0f;
             
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !_panning)
+            if (Input.GetKeyDown(KeyCode.Mouse1) && !_panning)
             {
                 _firstClickPos = _camera.ScreenToViewportPoint(Input.mousePosition);
                 _panning = true;
@@ -30,7 +30,7 @@ namespace gamex.player
                 distance = _mouseCurrentPos.x - _firstClickPos.x;
             }
  
-            if (Input.GetKeyUp(KeyCode.Mouse0))
+            if (Input.GetKeyUp(KeyCode.Mouse1))
             {
                 _mouseCurrentPos = Vector2.zero;
                 _firstClickPos = Vector2.zero;

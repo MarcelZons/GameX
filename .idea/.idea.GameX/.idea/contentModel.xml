@@ -8,6 +8,7 @@
         <e p="_Project" t="Include">
           <e p="Sources" t="Include">
             <e p="Player" t="Include">
+              <e p="AttackController.cs" t="Include" />
               <e p="MouseClickDrag.cs" t="Include" />
               <e p="PlayerCameraController.cs" t="Include" />
               <e p="PlayerInputController.cs" t="Include" />

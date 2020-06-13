@@ -14,7 +14,11 @@ namespace VSX.UniversalVehicleCombat
 
         [SerializeField]
         protected Vector3 velocity;
-        public Vector3 Velocity { get { return velocity; } }
+        public Vector3 Velocity
+        {
+            get { return velocity; }
+            set => velocity = value;
+        }
 
         private Rigidbody rBody;
 
@@ -33,11 +37,15 @@ namespace VSX.UniversalVehicleCombat
             r.drag = 0;
         }
 
-
-        private void OnEnable()
+        public void Fire(Vector3 velocity)
         {
-            // Set velocity according to facing direction
-            rBody.velocity = transform.TransformDirection(velocity);
+            rBody.velocity = transform.TransformDirection(velocity);    
         }
+
+        // private void OnEnable()
+        // {
+        //     // Set velocity according to facing direction
+        //     rBody.velocity = transform.TransformDirection(velocity);
+        // }
     }
 }

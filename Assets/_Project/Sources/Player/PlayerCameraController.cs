@@ -9,6 +9,8 @@ namespace gamex.player
         [SerializeField] private float _speedZoomMultipler;
         private float[] _initalOrbitRadii;
 
+        public Camera CameraComponent => GetComponentInChildren<Camera>();
+        
         private void Start()
         {
             _initalOrbitRadii = new float[_freeLookCamera.m_Orbits.Length];
@@ -32,6 +34,14 @@ namespace gamex.player
             for (var i = 0; i < _freeLookCamera.m_Orbits.Length; i++)
             {
                 _freeLookCamera.m_Orbits[i].m_Radius = _initalOrbitRadii[i] + (_initalOrbitRadii[i] * speedFactor * _speedZoomMultipler);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            for (var i = 0; i < _freeLookCamera.m_Orbits.Length; i++)
+            {
+                _freeLookCamera.m_Orbits[i].m_Radius = _initalOrbitRadii[i];
             }
         }
     }
