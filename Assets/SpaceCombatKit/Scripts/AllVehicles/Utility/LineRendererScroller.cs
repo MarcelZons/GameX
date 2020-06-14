@@ -27,7 +27,6 @@ namespace VSX.UniversalVehicleCombat
         // Called every frame
         private void Update()
         {
-
             float length = Vector3.Distance(lineRenderer.GetPosition(0), lineRenderer.GetPosition(1));
             float scrollSpeed = scrollSpeedX;
             float nextTiling = tiling * length;
