@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - EnemyWeakPoint
   layers:
   - Default
   - TransparentFX
@@ -17,10 +19,10 @@ TagManager:
   - TestLayer
   - UIManagedFOV
   - UINoFOV
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - EnemyWeakPoint
+  - Bullet
+  - Player
   - 
   - 
   - 
