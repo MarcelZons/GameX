@@ -28,6 +28,7 @@
                 <e p="EnemyShipUiTargeter.cs" t="Include" />
                 <e p="EnemyWeakPointUiTargeter.cs" t="Include" />
                 <e p="MouseClickDrag.cs" t="Include" />
+                <e p="ObjectLocatorArrow.cs" t="Include" />
                 <e p="PlayerCameraController.cs" t="Include" />
                 <e p="PlayerInputController.cs" t="Include" />
                 <e p="PlayerRadar.cs" t="Include" />
@@ -39,7 +40,6 @@
                 <e p="SecondaryWeaponStatusEvent.cs" t="Include" />
                 <e p="Shield.cs" t="Include" />
                 <e p="ShieldController.cs" t="Include" />
-                <e p="ShipLocator.cs" t="Include" />
               </e>
               <e p="Util" t="Include">
                 <e p="ColorPropertySetter.cs" t="Include" />
