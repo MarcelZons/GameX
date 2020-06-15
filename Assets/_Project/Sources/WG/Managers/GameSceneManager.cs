@@ -6,7 +6,7 @@ namespace WG.GameX.Managers
     public class GameSceneManager : MonoBehaviour
     {
         [SerializeField] private DependencyMediator _dependency;
-
+        public DependencyMediator DependencyMediator => _dependency;
         private void Start()
         {
             _dependency.PlayerShipController.SecondaryWeaponReady.AddListener(

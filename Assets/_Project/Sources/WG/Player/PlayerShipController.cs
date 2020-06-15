@@ -15,10 +15,10 @@ namespace WG.GameX.Player
         [SerializeField] private Transform _lookAtReferenceBottom;
         [SerializeField] private List<Transform> _gunPoints;
 
-        [Space(10)] [Header("___________Movement___________________")] [Range(.1f, 5f)] [SerializeField]
-        private float _minSpeed;
+        [Space(10)] [Header("___________Movement___________________")]
+        [Range(0, 5f)] [SerializeField] private float _minSpeed;
 
-        [Range(.1f, 10f)] [SerializeField] private float _maxSpeed;
+        [Range(0f, 10f)] [SerializeField] private float _maxSpeed;
         [Range(1, 10f)] [SerializeField] private float _accelaration;
 
         private PlayerCameraController _playerCameraController;
@@ -26,14 +26,13 @@ namespace WG.GameX.Player
         private PlayerInputController _playerInputController;
         private PlayerShipAnimationController _animationController;
         private AttackController _attackController;
-
+        private SecondaryWeaponStatusEvent secondaryWeaponReady;
         public float SpeedFactor => _playerShipMovement.SpeedFactor;
         public float SecondaryWeaponFilledStatus => _attackController.SecondaryWeaponFilledStatus;
-
         public SecondaryWeaponStatusEvent SecondaryWeaponReady => secondaryWeaponReady;
-
-        private SecondaryWeaponStatusEvent secondaryWeaponReady;
-
+        public Camera MainCamera => _playerCameraController.CameraComponent;
+        
+        
         private void Awake()
         {
             _playerInputController = GetComponent<PlayerInputController>();

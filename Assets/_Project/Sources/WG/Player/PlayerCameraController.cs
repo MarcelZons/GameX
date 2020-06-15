@@ -9,8 +9,9 @@ namespace WG.GameX.Player
         [SerializeField] private CinemachineFreeLook _freeLookCamera;
         [SerializeField] private float _speedZoomMultipler;
         private float[] _initalOrbitRadii;
+        [SerializeField] private Camera _mainCamera;
 
-        public Camera CameraComponent => GetComponentInChildren<Camera>();
+        public Camera CameraComponent => _mainCamera;
 
         private void Start()
         {

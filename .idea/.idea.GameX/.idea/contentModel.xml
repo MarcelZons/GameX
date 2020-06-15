@@ -14,6 +14,7 @@
               </e>
               <e p="Enemy" t="Include">
                 <e p="EnemyShipController.cs" t="Include" />
+                <e p="EnemyTurret.cs" t="Include" />
                 <e p="EnemyWeakPoint.cs" t="Include" />
               </e>
               <e p="Managers" t="Include">
@@ -24,6 +25,8 @@
               </e>
               <e p="Player" t="Include">
                 <e p="AttackController.cs" t="Include" />
+                <e p="EnemyShipUiTargeter.cs" t="Include" />
+                <e p="EnemyWeakPointUiTargeter.cs" t="Include" />
                 <e p="MouseClickDrag.cs" t="Include" />
                 <e p="PlayerCameraController.cs" t="Include" />
                 <e p="PlayerInputController.cs" t="Include" />
@@ -32,11 +35,14 @@
                 <e p="PlayerShipController.cs" t="Include" />
                 <e p="PlayerShipMovement.cs" t="Include" />
                 <e p="PrimaryWeapon.cs" t="Include" />
-                <e p="ScreenSpacePositioner.cs" t="Include" />
                 <e p="SecondaryWeapon.cs" t="Include" />
                 <e p="SecondaryWeaponStatusEvent.cs" t="Include" />
+                <e p="Shield.cs" t="Include" />
+                <e p="ShieldController.cs" t="Include" />
+                <e p="ShipLocator.cs" t="Include" />
               </e>
               <e p="Util" t="Include">
+                <e p="ColorPropertySetter.cs" t="Include" />
                 <e p="Constants.cs" t="Include" />
                 <e p="FloatExtension.cs" t="Include" />
                 <e p="TMP_Typewriter" t="Include">
@@ -61,6 +67,44 @@
               <e p="DOTweenModuleUtils.cs" t="Include" />
             </e>
             <e p="readme.txt" t="Include" />
+          </e>
+        </e>
+        <e p="JMO Assets" t="Include">
+          <e p="MatCap Shaders" t="Include">
+            <e p="_MatCap Shaders Readme.txt" t="Include" />
+            <e p="Creator" t="Include">
+              <e p="Assets" t="Include">
+                <e p="MC_CreateMatCap.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Demo" t="Include">
+              <e p="Assets" t="Include">
+                <e p="MC_AutoRotate.cs" t="Include" />
+                <e p="MC_SwitchTexture.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="MatCap_Lit.shader" t="Include" />
+              <e p="MatCap_Plain.shader" t="Include" />
+              <e p="MatCap_Plain_Additive.shader" t="Include" />
+              <e p="MatCap_Plain_AdditiveZ.shader" t="Include" />
+              <e p="MatCap_Plain_Bumped.shader" t="Include" />
+              <e p="MatCap_TextureAdd.shader" t="Include" />
+              <e p="MatCap_TextureAdd_Bumped.shader" t="Include" />
+              <e p="MatCap_TextureMult.shader" t="Include" />
+              <e p="MatCap_TextureMult_Bumped.shader" t="Include" />
+            </e>
+            <e p="Textures" t="Include">
+              <e p="BenSimonds" t="Include">
+                <e p="_Textures Readme.txt" t="Include" />
+              </e>
+              <e p="Creator" t="Include">
+                <e p="_Creator.txt" t="Include" />
+              </e>
+              <e p="MaCrea" t="Include">
+                <e p="MaCrea.txt" t="Include" />
+              </e>
+            </e>
           </e>
         </e>
         <e p="SpaceCombatKit" t="Include">
@@ -169,6 +213,7 @@
                 <e p="ShieldModuleLinker.cs" t="Include" />
               </e>
               <e p="HologramShaders" t="Include">
+                <e p="Hologram 1.shader" t="Include" />
                 <e p="Hologram.shader" t="Include" />
                 <e p="HologramOutlined.shader" t="Include" />
               </e>

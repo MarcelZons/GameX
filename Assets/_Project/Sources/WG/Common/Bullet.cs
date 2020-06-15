@@ -7,15 +7,19 @@ namespace WG.GameX.Common
     {
         [SerializeField] private float _selfDestructTime;
         [SerializeField] private BulletExplode _bulletExplode;
+        [SerializeField] private int _damageAmount;
         private Rigidbody _rigidbody;
         private LineRenderer _lineRenderer;
+
+        public int DamageAmount => _damageAmount;
+
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
             _lineRenderer = GetComponentInChildren<LineRenderer>();
             _lineRenderer.enabled = false;
         }
-        
+
         private void OnEnable()
         {
             Invoke(nameof(SelfDestruct), _selfDestructTime);
@@ -30,14 +34,10 @@ namespace WG.GameX.Common
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log($"bullet hit {other}");
-            if (other.CompareTag(Constants.EnemyTag))
-            {
-                _lineRenderer.enabled = false;
-                _bulletExplode.Play();
-                _rigidbody.isKinematic = true;
-                Invoke(nameof(SelfDestruct), 1);   
-            }
+            _lineRenderer.enabled = false;
+            _bulletExplode.Play();
+            _rigidbody.isKinematic = true;
+            Invoke(nameof(SelfDestruct), 1);
         }
 
         private void SelfDestruct()

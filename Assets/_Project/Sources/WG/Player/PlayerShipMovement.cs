@@ -37,7 +37,7 @@ namespace WG.GameX.Player
             _forwardSpeed = _forwardSpeed.GetSmoothDamping(_lerpedForwardMovementSpeed, _accelaration);
             var position = Vector3.Normalize(_pivotTransform.forward);
             //_shipTransform.position += position * _forwardSpeed;
-            _rigidBody.velocity = (position * _forwardSpeed*100);
+            _rigidBody.velocity = (position * _forwardSpeed * 100);
         }
     }
 }

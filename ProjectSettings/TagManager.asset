@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - EnemyWeakPoint
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - EnemyWeakPoint
   - Bullet
   - Player
-  - 
+  - Hud
   - 
   - 
   - 
