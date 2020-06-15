@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 using WG.GameX.Player;
 
 namespace WG.GameX.Managers
@@ -31,5 +30,8 @@ namespace WG.GameX.Managers
 
         public GameSceneManager SceneManager => _gameSceneManager;
         public Camera MainCamera => _playerShipController.MainCamera;
+        
+        
+        
     }
 }

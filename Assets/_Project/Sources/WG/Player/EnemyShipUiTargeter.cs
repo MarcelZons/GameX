@@ -1,18 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using WG.GameX.Enemy;
 using WG.GameX.Managers;
 
 namespace WG.GameX.Player
 {
-    public class EnemyShipUiTargeter: MonoBehaviour
+    public class EnemyShipUiTargeter : MonoBehaviour
     {
         [SerializeField] private Transform _target;
         [SerializeField] private float _appearDistance;
         [SerializeField] private float _hidingDistance;
 
-        [SerializeField] private Vector3 _direction;
-        
         private RectTransform _rectTransform;
         private RectTransform _canvas;
         private Transform _playerTransform;
@@ -20,7 +17,8 @@ namespace WG.GameX.Player
         private Camera _mainCamera;
         private Animator _animator;
         private static readonly int Appear = Animator.StringToHash("Appear");
-        
+        private ObjectLocatorArrow _objectLocatorArrow;
+
         private void Awake()
         {
             _rectTransform = GetComponent<RectTransform>();
@@ -29,6 +27,8 @@ namespace WG.GameX.Player
 
             if (GetComponent<Animator>() != null)
                 _animator = GetComponent<Animator>();
+
+            _objectLocatorArrow = transform.parent.GetComponentInChildren<ObjectLocatorArrow>();
         }
 
         private void Start()
@@ -38,12 +38,10 @@ namespace WG.GameX.Player
         }
 
         private void Update()
-        {
-            _direction = _playerTransform.InverseTransformPoint(_target.position).normalized;
-            
+        { 
             var distance = Vector3.Distance(_playerTransform.position, _target.position);
-            
-            if (distance>_hidingDistance && distance < _appearDistance)
+
+            if (distance > _hidingDistance && distance < _appearDistance)
             {
                 if (_playerTransform.InverseTransformPoint(_target.position).z < 0)
                 {
@@ -52,8 +50,8 @@ namespace WG.GameX.Player
                 else
                 {
                     SetImageVisibilityState(true);
-                    _rectTransform.anchoredPosition = WorldToCanvasPosition(_canvas,_mainCamera, _target.position);                
-                }                
+                    _rectTransform.anchoredPosition = WorldToCanvasPosition(_canvas, _mainCamera, _target.position);
+                }
             }
             else
             {
@@ -71,17 +69,19 @@ namespace WG.GameX.Player
             {
                 _image.enabled = state;
             }
+
+            _objectLocatorArrow.ShowLocator = !state;
         }
 
-        private Vector2 WorldToCanvasPosition(RectTransform canvas, Camera camera, Vector3 position) 
+        private Vector2 WorldToCanvasPosition(RectTransform canvas, Camera camera, Vector3 position)
         {
             Vector2 temp = camera.WorldToViewportPoint(position);
             temp.x *= canvas.sizeDelta.x;
             temp.y *= canvas.sizeDelta.y;
-            
+
             temp.x -= canvas.sizeDelta.x * canvas.pivot.x;
             temp.y -= canvas.sizeDelta.y * canvas.pivot.y;
- 
+
             return temp;
         }
     }
