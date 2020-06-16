@@ -28,5 +28,10 @@ namespace WG.GameX.Player
             _topUiHealthBarImageFg.enabled = state;
             _shipNameText.enabled = state;
         }
+
+        public void SetHealthBarValue(float health)
+        {
+            _topUiHealthBarImageFg.fillAmount = health;
+        }
     }
 }

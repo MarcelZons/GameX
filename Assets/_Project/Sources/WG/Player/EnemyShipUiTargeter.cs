@@ -72,6 +72,11 @@ namespace WG.GameX.Player
             }
         }
 
+        public void SetHealthBar(float health)
+        {
+            
+        }
+
         private void ShowTopUi(float distance)
         {
             if (distance < _hidingDistance)
@@ -118,6 +123,11 @@ namespace WG.GameX.Player
             temp.y -= canvas.sizeDelta.y * canvas.pivot.y;
 
             return temp;
+        }
+
+        public void SetHealthBarValue(float health)
+        {
+            _targeterHealthBarImageFg.fillAmount = health;
         }
     }
 }
