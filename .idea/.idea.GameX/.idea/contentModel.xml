@@ -25,6 +25,8 @@
               </e>
               <e p="Player" t="Include">
                 <e p="AttackController.cs" t="Include" />
+                <e p="BigEnemyHealth.cs" t="Include" />
+                <e p="EnemyShipUiController.cs" t="Include" />
                 <e p="EnemyShipUiTargeter.cs" t="Include" />
                 <e p="EnemyWeakPointUiTargeter.cs" t="Include" />
                 <e p="MouseClickDrag.cs" t="Include" />
@@ -40,6 +42,7 @@
                 <e p="SecondaryWeaponStatusEvent.cs" t="Include" />
                 <e p="Shield.cs" t="Include" />
                 <e p="ShieldController.cs" t="Include" />
+                <e p="TopUiDisplayEvent.cs" t="Include" />
               </e>
               <e p="Util" t="Include">
                 <e p="ColorPropertySetter.cs" t="Include" />
