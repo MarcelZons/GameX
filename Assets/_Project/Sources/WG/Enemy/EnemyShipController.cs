@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using VSX.UniversalVehicleCombat;
 using WG.GameX.Managers;
 
 namespace WG.GameX.Enemy
 {
+    public class EnemyShipUiController: MonoBehaviour
+    {
+        
+    }
     public class EnemyShipController : MonoBehaviour
     {
         [SerializeField] private float _turretActivationDistance = 300;

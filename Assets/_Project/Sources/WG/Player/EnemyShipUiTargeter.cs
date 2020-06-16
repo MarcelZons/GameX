@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 using WG.GameX.Managers;
 
@@ -6,29 +7,40 @@ namespace WG.GameX.Player
 {
     public class EnemyShipUiTargeter : MonoBehaviour
     {
-        [SerializeField] private Transform _target;
+        [Header("Settings Input -------------")]
         [SerializeField] private float _appearDistance;
         [SerializeField] private float _hidingDistance;
+        
+        [Header("Target Object")]
+        [SerializeField] private Transform _target;
+        
+        [Header("Canvas Transform")]
+        [SerializeField] private RectTransform _canvasRectTransform;
 
-        private RectTransform _rectTransform;
-        private RectTransform _canvas;
+        [Header("Distant Transform and Images")]
+        [SerializeField] private RectTransform _distanceTargeterRectTransform;
+        [SerializeField] private TextMeshProUGUI _distanceText;
+        [SerializeField] private Image _targeterHealthBarImageFg;
+        
+        private Image _distanceTargeterImage;
+        private Animator _distanceTargeterAnimator;
         private Transform _playerTransform;
-        private Image _image;
         private Camera _mainCamera;
-        private Animator _animator;
         private static readonly int Appear = Animator.StringToHash("Appear");
         private ObjectLocatorArrow _objectLocatorArrow;
+        
+        private bool _showTopUi;
+        private TopUiDisplayEvent topUiDisplayEvent;
+
+        public TopUiDisplayEvent TopUiDisplayEvent => topUiDisplayEvent;
+
 
         private void Awake()
         {
-            _rectTransform = GetComponent<RectTransform>();
-            _canvas = transform.parent.GetComponent<RectTransform>();
-            _image = GetComponent<Image>();
-
-            if (GetComponent<Animator>() != null)
-                _animator = GetComponent<Animator>();
-
             _objectLocatorArrow = transform.parent.GetComponentInChildren<ObjectLocatorArrow>();
+            _distanceTargeterImage = _distanceTargeterRectTransform.GetComponent<Image>();
+            _distanceTargeterAnimator = _distanceTargeterRectTransform.GetComponent<Animator>();
+            topUiDisplayEvent = new TopUiDisplayEvent();
         }
 
         private void Start()
@@ -40,7 +52,7 @@ namespace WG.GameX.Player
         private void Update()
         { 
             var distance = Vector3.Distance(_playerTransform.position, _target.position);
-
+            ShowTopUi(distance);
             if (distance > _hidingDistance && distance < _appearDistance)
             {
                 if (_playerTransform.InverseTransformPoint(_target.position).z < 0)
@@ -50,7 +62,8 @@ namespace WG.GameX.Player
                 else
                 {
                     SetImageVisibilityState(true);
-                    _rectTransform.anchoredPosition = WorldToCanvasPosition(_canvas, _mainCamera, _target.position);
+                    _distanceText.text = $"{(int)distance}m";
+                    _distanceTargeterRectTransform.anchoredPosition = WorldToCanvasPosition(_canvasRectTransform, _mainCamera, _target.position);
                 }
             }
             else
@@ -59,17 +72,39 @@ namespace WG.GameX.Player
             }
         }
 
-        private void SetImageVisibilityState(bool state)
+        private void ShowTopUi(float distance)
         {
-            if (_animator != null)
+            if (distance < _hidingDistance)
             {
-                _animator.SetBool(Appear, state);
+                if (_showTopUi == false)
+                {
+                    topUiDisplayEvent.Invoke(true);
+                    _showTopUi = true;
+                }
             }
             else
             {
-                _image.enabled = state;
+                if (_showTopUi == true)
+                {
+                    topUiDisplayEvent.Invoke(false);
+                    _showTopUi = false;
+                }
+            }
+            
+        }
+
+        private void SetImageVisibilityState(bool state)
+        {
+            if (_distanceTargeterAnimator != null)
+            {
+                _distanceTargeterAnimator.SetBool(Appear, state);
+            }
+            else
+            {
+                _distanceTargeterImage.enabled = state;
             }
 
+            _distanceText.text = state ? _distanceText.text : ""; 
             _objectLocatorArrow.ShowLocator = !state;
         }
 

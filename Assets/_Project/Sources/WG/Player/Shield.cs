@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using DG.Tweening;
+﻿using System.Collections;
 using UnityEngine;
 using WG.GameX.Common;
 using WG.GameX.Managers;
@@ -83,6 +81,11 @@ namespace WG.GameX.Player
             {
                 _shieldColorSetter.SetVisibility(i, _colorGradiant.Evaluate(i));
                 yield return new WaitForEndOfFrame();
+            }
+            
+            foreach (var meshCollider in _meshColliders)
+            {
+                meshCollider.enabled = true;
             }
             DependencyMediator.Instance.UiController.SetInformationText($"{gameObject.name} Recharged!");
             _shieldHealth = _initialHealth;
