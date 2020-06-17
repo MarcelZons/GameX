@@ -18,6 +18,7 @@
                 <e p="EnemyWeakPoint.cs" t="Include" />
               </e>
               <e p="Environment" t="Include">
+                <e p="MoveWithPlayer.cs" t="Include" />
                 <e p="PlanetRotation.cs" t="Include" />
               </e>
               <e p="Managers" t="Include">
