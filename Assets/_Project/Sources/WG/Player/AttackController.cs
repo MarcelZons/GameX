@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using WG.GameX.Enemy;
 using WG.GameX.Util;
 
 namespace WG.GameX.Player
 {
-    public class PrimaryAttackSelectable
-    {
-        
-    }
     public class AttackController : MonoBehaviour
     {
         [Header("Primary Weapons ------------------------")] [SerializeField]
@@ -30,19 +28,20 @@ namespace WG.GameX.Player
         private float _secondaryWeaponFillStatus;
 
         private SecondaryWeaponStatusEvent _secondaryWeaponStatus;
-        
+
         public float SecondaryWeaponFilledStatus
         {
             get
             {
                 var currentReadiness = (_timeSinceSecondaryWeaponFired / _secondaryWeapnFireFrequency).Clamp(0, 1f);
-                _secondaryWeaponFillStatus = Mathf.MoveTowards(_secondaryWeaponFillStatus, currentReadiness, Time.deltaTime * 10);
+                _secondaryWeaponFillStatus =
+                    Mathf.MoveTowards(_secondaryWeaponFillStatus, currentReadiness, Time.deltaTime * 10);
                 return _secondaryWeaponFillStatus;
             }
         }
 
         public SecondaryWeaponStatusEvent SecondaryWeaponStatus => _secondaryWeaponStatus;
-        
+
         private void Awake()
         {
             _secondaryWeaponStatus = new SecondaryWeaponStatusEvent();
@@ -102,11 +101,26 @@ namespace WG.GameX.Player
                 {
                     _secondaryWeapon.IsReady = true;
                     _secondaryWeaponStatus.Invoke("Beam is fully Charged!\nPress Space to Fire");
-                }   
+                }
             }
 
             _timeSinceSecondaryWeaponFired += Time.deltaTime;
             _secondaryWeapon.Update();
+        }
+
+        public void SelectableFireCommand(List<Transform> _enemyWeakPoints, float hitDuration, LayerMask layerMask)
+        {
+            StartCoroutine(IterateWeapoints(_enemyWeakPoints, hitDuration, layerMask));
+        }
+
+        private IEnumerator IterateWeapoints(List<Transform> _enemyWeakPoints, float hitDuration, LayerMask layerMask)
+        {
+            foreach (var weakPoint in _enemyWeakPoints)
+            {
+                _secondaryWeapon.FireAtTarget(_originTransform, weakPoint, layerMask);
+                yield return new WaitForSeconds(hitDuration);
+                StopSecondaryFire();
+            }
         }
 
         private void StopSecondaryFire()

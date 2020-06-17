@@ -12,8 +12,9 @@ namespace WG.GameX.Enemy
         [SerializeField] private Transform _verticalArm;
         [SerializeField] private Transform _horizontalArm;
         [SerializeField] private Transform _originPoint;
+        
         private Transform _playerTransform;
-        [SerializeField] private FlashController _flashController;
+        private FlashController _flashController;
 
         private float _activationDistance;
 

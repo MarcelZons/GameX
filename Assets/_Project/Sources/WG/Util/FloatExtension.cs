@@ -1,12 +1,29 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace WG.GameX.Util
 {
+    public static class TransoformExtension
+    {
+        public static List<Transform> ToList(this  Transform transform)
+        {
+            return new List<Transform>(1)
+            {
+                transform
+            };
+        }
+    }
     public static class FloatExtension
     {
         public static float GetSmoothDamping(this float current, float target, float dampSpeed)
         {
             current = Mathf.Lerp(current, target, Time.deltaTime * dampSpeed);
+            return current;
+        }
+        
+        public static float GetLinearDamping(this float current, float target, float dampSpeed)
+        {
+            current = Mathf.MoveTowards(current, target, Time.deltaTime * dampSpeed);
             return current;
         }
 

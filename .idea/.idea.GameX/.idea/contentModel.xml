@@ -37,6 +37,7 @@
                 <e p="PlayerShipAnimationController.cs" t="Include" />
                 <e p="PlayerShipController.cs" t="Include" />
                 <e p="PlayerShipMovement.cs" t="Include" />
+                <e p="PrimaryAttackSelectable.cs" t="Include" />
                 <e p="PrimaryWeapon.cs" t="Include" />
                 <e p="SecondaryWeapon.cs" t="Include" />
                 <e p="SecondaryWeaponStatusEvent.cs" t="Include" />
@@ -508,6 +509,16 @@
           </e>
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+        <e p="VFX" t="Include">
+          <e p="VFX" t="Include">
+            <e p="ExhaustTrails" t="Include">
+              <e p="AddAlways.shader" t="Include" />
+            </e>
+            <e p="Shield" t="Include">
+              <e p="ShieldShader.shader" t="Include" />
+            </e>
           </e>
         </e>
       </e>

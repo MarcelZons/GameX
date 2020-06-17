@@ -34,7 +34,7 @@ namespace WG.GameX.Player
             _shipTransform.Rotate(Vector3.up * horizontalValue);
             _lerpedForwardMovementSpeed += mouseScroll;
             _lerpedForwardMovementSpeed = _lerpedForwardMovementSpeed.Clamp(_minSpeed, _maxSpeed);
-            _forwardSpeed = _forwardSpeed.GetSmoothDamping(_lerpedForwardMovementSpeed, _accelaration);
+            _forwardSpeed = _forwardSpeed.GetLinearDamping(_lerpedForwardMovementSpeed, _accelaration);
             var position = Vector3.Normalize(_pivotTransform.forward);
             //_shipTransform.position += position * _forwardSpeed;
             _rigidBody.velocity = (position * _forwardSpeed * 100);
