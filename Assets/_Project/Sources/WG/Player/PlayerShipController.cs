@@ -59,8 +59,7 @@ namespace WG.GameX.Player
 
         private void PrimaryShotFired()
         {
-            _attackController.PrimaryWeaponFired(_pivotTransform.rotation, _pivotTransform.forward,
-                _playerShipMovement.SpeedFactor);
+            //_attackController.PrimaryWeaponFired(_pivotTransform.rotation, _pivotTransform.forward,  _playerShipMovement.SpeedFactor);
         }
 
         private void SecondaryShotFired()

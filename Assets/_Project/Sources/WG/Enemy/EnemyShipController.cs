@@ -22,6 +22,8 @@ namespace WG.GameX.Enemy
         public Vector3 Position => transform.position;
         public LayerMask Layer => gameObject.layer;
 
+        public List<EnemyWeakPoint> EnemyWeakPoints => _enemyWeakPoints;
+
         private void Awake()
         {
             _enemyWeakPoints = GetComponentsInChildren<EnemyWeakPoint>().ToList();

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using WG.GameX.Util;
 
@@ -13,35 +14,47 @@ namespace WG.GameX.Player
         [SerializeField] private GameObject _bulletPrefab;
         private PrimaryWeapon _primaryWeapon;
 
-        [Space(10)] [Header("Secondary Weapons ------------------------")] [SerializeField]
-        private Transform _originTransform;
+        [Space(10)] [Header("Secondary Weapons ------------------------")] 
+        [SerializeField] private Transform _originTransform;
 
         [SerializeField] private float _secondaryWeapnFireFrequency;
         [SerializeField] private GameObject _beamGlowObject;
         [SerializeField] private GameObject _beamSpawnObject;
         [SerializeField] private GameObject _beamHeatEffect;
         [SerializeField] private PlayerRadar _playerRadar;
+
+        [Space(10)] [Header("Selectable Primary Weapons ------------------------")] 
+        [SerializeField] private SelectablePrimaryWeapon _selectableWeaponPrefab;
+        [SerializeField] private int _numberOfSelectableWeapons;
+        private SelectablePrimaryWeapon[] _selectablePrimaryWeapons;
+        
         private SecondaryWeapon _secondaryWeapon;
         private float _timeSinceSecondaryWeaponFired;
         private float _secondaryWeaponFillStatus;
 
         private SecondaryWeaponStatusEvent _secondaryWeaponStatus;
-        
+
         public float SecondaryWeaponFilledStatus
         {
             get
             {
                 var currentReadiness = (_timeSinceSecondaryWeaponFired / _secondaryWeapnFireFrequency).Clamp(0, 1f);
-                _secondaryWeaponFillStatus = Mathf.MoveTowards(_secondaryWeaponFillStatus, currentReadiness, Time.deltaTime * 10);
+                _secondaryWeaponFillStatus =
+                    Mathf.MoveTowards(_secondaryWeaponFillStatus, currentReadiness, Time.deltaTime * 10);
                 return _secondaryWeaponFillStatus;
             }
         }
 
         public SecondaryWeaponStatusEvent SecondaryWeaponStatus => _secondaryWeaponStatus;
-        
+
         private void Awake()
         {
             _secondaryWeaponStatus = new SecondaryWeaponStatusEvent();
+            _selectablePrimaryWeapons = new SelectablePrimaryWeapon[_numberOfSelectableWeapons];
+            for (int i = 0; i < _numberOfSelectableWeapons; i++)
+            {
+                _selectablePrimaryWeapons[i] = Instantiate(_selectableWeaponPrefab, transform);
+            }
         }
 
 
@@ -98,16 +111,44 @@ namespace WG.GameX.Player
                 {
                     _secondaryWeapon.IsReady = true;
                     _secondaryWeaponStatus.Invoke("Beam is fully Charged!\nPress Space to Fire");
-                }   
+                }
             }
 
             _timeSinceSecondaryWeaponFired += Time.deltaTime;
             _secondaryWeapon.Update();
         }
 
+        public void SelectableFireCommand(List<Transform> enemyWeakPoints, float hitDuration, LayerMask layerMask, Transform leftOrigin, Transform rightOrigin)
+        {
+            StartCoroutine(IterateWeapoints(enemyWeakPoints, hitDuration, layerMask,leftOrigin, rightOrigin));
+        }
+
+        private IEnumerator IterateWeapoints(List<Transform> _enemyWeakPoints, float hitDuration, LayerMask layerMask, Transform leftOrigin, Transform rightOrigin)
+        {
+            var weakPointIndex = 0;
+            
+            while (weakPointIndex < _enemyWeakPoints.Count)
+            {
+                for (int i = 0; i < _numberOfSelectableWeapons; i++)
+                {
+                    if (weakPointIndex == _enemyWeakPoints.Count)
+                    {
+                        break;
+                    }
+                    
+                    _selectablePrimaryWeapons[i].FireAtTarget( _enemyWeakPoints[weakPointIndex], layerMask, hitDuration, leftOrigin, rightOrigin);
+                    weakPointIndex++;
+                }
+                yield return new WaitForSeconds(hitDuration);
+            }
+        }
+        
+
         private void StopSecondaryFire()
         {
             _secondaryWeapon.StopFire();
         }
+
+        
     }
 }
