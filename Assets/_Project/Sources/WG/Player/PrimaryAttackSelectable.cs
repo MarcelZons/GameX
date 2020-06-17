@@ -9,6 +9,10 @@ namespace WG.GameX.Player
     {
         [SerializeField] private LayerMask _enemyLayerMask;
         [SerializeField] private Camera _mainCamera;
+
+        [SerializeField] private Transform _leftOrigin;
+        [SerializeField] private Transform _rightOrigin;
+        
         public Texture2D cursorTexture;
         public CursorMode cursorMode = CursorMode.Auto;
         public Vector2 hotSpot = Vector2.zero;
@@ -33,14 +37,14 @@ namespace WG.GameX.Player
                     if (_enemyShipController.EnemyWeakPoints.Count == 0)
                     {
                         _attackController.SelectableFireCommand(_enemyShipController.transform.ToList(), 1f,
-                            _enemyShipController.LayerMask);
+                            _enemyShipController.LayerMask, _leftOrigin, _rightOrigin);
                     }
                     else
                     {
                         var weakPointTransforms = _enemyShipController.EnemyWeakPoints.Select(point => point.transform)
                             .ToList();
-                        _attackController.SelectableFireCommand(weakPointTransforms, 1f,
-                            _enemyShipController.LayerMask);
+                        _attackController.SelectableFireCommand(weakPointTransforms,1f,
+                            _enemyShipController.LayerMask, _leftOrigin, _rightOrigin);
                     }
                 }
             }

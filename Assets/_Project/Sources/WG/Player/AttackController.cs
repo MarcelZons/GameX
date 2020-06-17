@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using WG.GameX.Enemy;
 using WG.GameX.Util;
 
 namespace WG.GameX.Player
@@ -119,12 +118,12 @@ namespace WG.GameX.Player
             _secondaryWeapon.Update();
         }
 
-        public void SelectableFireCommand(List<Transform> _enemyWeakPoints, float hitDuration, LayerMask layerMask)
+        public void SelectableFireCommand(List<Transform> enemyWeakPoints, float hitDuration, LayerMask layerMask, Transform leftOrigin, Transform rightOrigin)
         {
-            StartCoroutine(IterateWeapoints(_enemyWeakPoints, hitDuration, layerMask));
+            StartCoroutine(IterateWeapoints(enemyWeakPoints, hitDuration, layerMask,leftOrigin, rightOrigin));
         }
 
-        private IEnumerator IterateWeapoints(List<Transform> _enemyWeakPoints, float hitDuration, LayerMask layerMask)
+        private IEnumerator IterateWeapoints(List<Transform> _enemyWeakPoints, float hitDuration, LayerMask layerMask, Transform leftOrigin, Transform rightOrigin)
         {
             var weakPointIndex = 0;
             
@@ -137,7 +136,7 @@ namespace WG.GameX.Player
                         break;
                     }
                     
-                    _selectablePrimaryWeapons[i].FireAtTarget(_originTransform, _enemyWeakPoints[weakPointIndex], layerMask, hitDuration);
+                    _selectablePrimaryWeapons[i].FireAtTarget( _enemyWeakPoints[weakPointIndex], layerMask, hitDuration, leftOrigin, rightOrigin);
                     weakPointIndex++;
                 }
                 yield return new WaitForSeconds(hitDuration);
@@ -149,5 +148,7 @@ namespace WG.GameX.Player
         {
             _secondaryWeapon.StopFire();
         }
+
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using WG.GameX.Managers;
 
 namespace WG.GameX.Player
 {
@@ -12,20 +13,26 @@ namespace WG.GameX.Player
         private Transform _origin;
         private Transform _target;
         private LayerMask _layerMask;
+        private Transform _playerTransform;
         
         private bool _isFired;
         public bool IsReady { get; set; }
         public void Start()
         {
+            _playerTransform = DependencyMediator.Instance.PlayerShipController.transform;
             _beamLineRenderer = _beamLineObject.GetComponent<LineRenderer>();
             _beamMuzzleObject.SetActive(false);
             _beamLineObject.SetActive(false);
             _beamHitEffect.SetActive(false);
         }
 
-        public void FireAtTarget(Transform origin, Transform target, LayerMask layerMask, float duration)
+        public void FireAtTarget(Transform target, LayerMask layerMask, float duration, Transform leftOrigin, Transform rightOrigin)
         {
-            _origin = origin;
+            if (_playerTransform.InverseTransformPoint(target.position).x < 0)
+                _origin = leftOrigin;
+            else
+                _origin = rightOrigin;
+            
             _target = target;
             _layerMask = layerMask;
             SetFxStatus(true);
