@@ -27,6 +27,9 @@
                 <e p="GameUiController.cs" t="Include" />
                 <e p="PlayerHud.cs" t="Include" />
               </e>
+              <e p="MenuScene" t="Include">
+                <e p="MenuSceneManager.cs" t="Include" />
+              </e>
               <e p="Player" t="Include">
                 <e p="AttackController.cs" t="Include" />
                 <e p="BigEnemyHealth.cs" t="Include" />
@@ -492,6 +495,18 @@
         </e>
         <e p="SpaceFighter" t="Include">
           <e p="GlassStainedBumpDistort.shader" t="Include" />
+        </e>
+        <e p="Sun" t="Include">
+          <e p="Animated Sun - Readme.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="CameraFacingBillboard.cs" t="Include" />
+            <e p="clickToChangeFlare.cs" t="Include" />
+            <e p="flipTexture.cs" t="Include" />
+            <e p="FreeMove.cs" t="Include" />
+            <e p="OffsetTextureAnimate.cs" t="Include" />
+            <e p="PlanetMouseOrbit.cs" t="Include" />
+            <e p="PlanetRotateScript.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
