@@ -17,6 +17,9 @@
                 <e p="EnemyTurret.cs" t="Include" />
                 <e p="EnemyWeakPoint.cs" t="Include" />
               </e>
+              <e p="Environment" t="Include">
+                <e p="PlanetRotation.cs" t="Include" />
+              </e>
               <e p="Managers" t="Include">
                 <e p="DependencyMediator.cs" t="Include" />
                 <e p="GameSceneManager.cs" t="Include" />
@@ -72,6 +75,11 @@
               <e p="DOTweenModuleUtils.cs" t="Include" />
             </e>
             <e p="readme.txt" t="Include" />
+          </e>
+        </e>
+        <e p="EarthSimplePlanets" t="Include">
+          <e p="Shaders" t="Include">
+            <e p="DisplayNightEarthTexture.shader" t="Include" />
           </e>
         </e>
         <e p="JMO Assets" t="Include">
