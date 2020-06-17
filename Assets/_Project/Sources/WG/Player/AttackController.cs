@@ -4,6 +4,10 @@ using WG.GameX.Util;
 
 namespace WG.GameX.Player
 {
+    public class PrimaryAttackSelectable
+    {
+        
+    }
     public class AttackController : MonoBehaviour
     {
         [Header("Primary Weapons ------------------------")] [SerializeField]
