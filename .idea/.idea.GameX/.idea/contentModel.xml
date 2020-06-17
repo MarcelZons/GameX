@@ -41,6 +41,7 @@
                 <e p="PrimaryWeapon.cs" t="Include" />
                 <e p="SecondaryWeapon.cs" t="Include" />
                 <e p="SecondaryWeaponStatusEvent.cs" t="Include" />
+                <e p="SelectablePrimaryWeapon.cs" t="Include" />
                 <e p="Shield.cs" t="Include" />
                 <e p="ShieldController.cs" t="Include" />
                 <e p="TopUiDisplayEvent.cs" t="Include" />

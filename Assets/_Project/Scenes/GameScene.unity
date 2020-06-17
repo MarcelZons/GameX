@@ -1380,6 +1380,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1235396420, guid: 78e0939d3b44ee3409d9c63335b324b3, type: 3}
+      propertyPath: _weaponPrefab
+      value: 
+      objectReference: {fileID: 6242287042472211993, guid: 012108165e7c0d34d93ec92f32ef470a,
+        type: 3}
+    - target: {fileID: 1235396420, guid: 78e0939d3b44ee3409d9c63335b324b3, type: 3}
+      propertyPath: _selectableWeaponPrefab
+      value: 
+      objectReference: {fileID: 6242287042472211993, guid: 012108165e7c0d34d93ec92f32ef470a,
+        type: 3}
+    - target: {fileID: 1235396420, guid: 78e0939d3b44ee3409d9c63335b324b3, type: 3}
+      propertyPath: _numberOfSelectableWeapons
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1725458802522869131, guid: 78e0939d3b44ee3409d9c63335b324b3,
         type: 3}
       propertyPath: m_LocalRotation.y

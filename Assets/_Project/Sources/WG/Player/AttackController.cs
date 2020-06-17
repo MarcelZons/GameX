@@ -15,14 +15,20 @@ namespace WG.GameX.Player
         [SerializeField] private GameObject _bulletPrefab;
         private PrimaryWeapon _primaryWeapon;
 
-        [Space(10)] [Header("Secondary Weapons ------------------------")] [SerializeField]
-        private Transform _originTransform;
+        [Space(10)] [Header("Secondary Weapons ------------------------")] 
+        [SerializeField] private Transform _originTransform;
 
         [SerializeField] private float _secondaryWeapnFireFrequency;
         [SerializeField] private GameObject _beamGlowObject;
         [SerializeField] private GameObject _beamSpawnObject;
         [SerializeField] private GameObject _beamHeatEffect;
         [SerializeField] private PlayerRadar _playerRadar;
+
+        [Space(10)] [Header("Selectable Primary Weapons ------------------------")] 
+        [SerializeField] private SelectablePrimaryWeapon _selectableWeaponPrefab;
+        [SerializeField] private int _numberOfSelectableWeapons;
+        private SelectablePrimaryWeapon[] _selectablePrimaryWeapons;
+        
         private SecondaryWeapon _secondaryWeapon;
         private float _timeSinceSecondaryWeaponFired;
         private float _secondaryWeaponFillStatus;
@@ -45,6 +51,11 @@ namespace WG.GameX.Player
         private void Awake()
         {
             _secondaryWeaponStatus = new SecondaryWeaponStatusEvent();
+            _selectablePrimaryWeapons = new SelectablePrimaryWeapon[_numberOfSelectableWeapons];
+            for (int i = 0; i < _numberOfSelectableWeapons; i++)
+            {
+                _selectablePrimaryWeapons[i] = Instantiate(_selectableWeaponPrefab, transform);
+            }
         }
 
 
@@ -115,13 +126,24 @@ namespace WG.GameX.Player
 
         private IEnumerator IterateWeapoints(List<Transform> _enemyWeakPoints, float hitDuration, LayerMask layerMask)
         {
-            foreach (var weakPoint in _enemyWeakPoints)
+            var weakPointIndex = 0;
+            
+            while (weakPointIndex < _enemyWeakPoints.Count)
             {
-                _secondaryWeapon.FireAtTarget(_originTransform, weakPoint, layerMask);
+                for (int i = 0; i < _numberOfSelectableWeapons; i++)
+                {
+                    if (weakPointIndex == _enemyWeakPoints.Count)
+                    {
+                        break;
+                    }
+                    
+                    _selectablePrimaryWeapons[i].FireAtTarget(_originTransform, _enemyWeakPoints[weakPointIndex], layerMask, hitDuration);
+                    weakPointIndex++;
+                }
                 yield return new WaitForSeconds(hitDuration);
-                StopSecondaryFire();
             }
         }
+        
 
         private void StopSecondaryFire()
         {

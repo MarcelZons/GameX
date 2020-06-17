@@ -1,12 +1,11 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 using WG.GameX.Enemy;
 using WG.GameX.Util;
 
 namespace WG.GameX.Player
-{
-    public class PrimaryAttackSelectable: MonoBehaviour
+{ 
+    public class PrimaryAttackSelectable : MonoBehaviour
     {
         [SerializeField] private LayerMask _enemyLayerMask;
         [SerializeField] private Camera _mainCamera;
@@ -15,10 +14,11 @@ namespace WG.GameX.Player
         public Vector2 hotSpot = Vector2.zero;
 
         private AttackController _attackController;
-        
+
         private bool _isEnemySelected;
 
         private EnemyShipController _enemyShipController;
+
         private void Awake()
         {
             _attackController = GetComponent<AttackController>();
@@ -32,14 +32,16 @@ namespace WG.GameX.Player
                 {
                     if (_enemyShipController.EnemyWeakPoints.Count == 0)
                     {
-                        _attackController.SelectableFireCommand(_enemyShipController.transform.ToList(), 1f, _enemyShipController.LayerMask);
+                        _attackController.SelectableFireCommand(_enemyShipController.transform.ToList(), 1f,
+                            _enemyShipController.LayerMask);
                     }
-            else
+                    else
                     {
-                        var weakPointTransforms = _enemyShipController.EnemyWeakPoints.Select(point => point.transform).ToList();
-                        _attackController.SelectableFireCommand(weakPointTransforms, 1f,_enemyShipController.LayerMask);    
+                        var weakPointTransforms = _enemyShipController.EnemyWeakPoints.Select(point => point.transform)
+                            .ToList();
+                        _attackController.SelectableFireCommand(weakPointTransforms, 1f,
+                            _enemyShipController.LayerMask);
                     }
-
                 }
             }
         }
@@ -48,11 +50,11 @@ namespace WG.GameX.Player
         {
             RaycastHit hit;
             Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-        
+
             if (Physics.Raycast(ray, out hit, 5000, _enemyLayerMask))
             {
                 _isEnemySelected = true;
-                _enemyShipController = hit.collider.gameObject.GetComponent<EnemyShipController>(); 
+                _enemyShipController = hit.collider.gameObject.GetComponent<EnemyShipController>();
                 Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
             }
             else
