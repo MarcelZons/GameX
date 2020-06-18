@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using WG.GameX.Enemy;
@@ -21,6 +22,12 @@ namespace WG.GameX.Player
         [SerializeField] private int _health = 100;
 
         [SerializeField] private int _shieldHealth = 10;
+
+        [Space(10)] [Header("___________Primary Attack Range")]
+         
+        [Range(100,10000)]
+        [SerializeField]
+        private float _primaryAttackRange;
         
         [Space(20)]
         [Header("##############################")]
@@ -46,6 +53,8 @@ namespace WG.GameX.Player
         public int Health => _health;
 
         public int ShieldHealth => _shieldHealth;
+
+        public float PrimaryAttackRange => _primaryAttackRange;
 
 
         private void Awake()
@@ -96,6 +105,11 @@ namespace WG.GameX.Player
         public void RemoveFromRadar(EnemyWeakPoint enemyWeakPoint)
         {
             _playerRadar.RemoveFromList(enemyWeakPoint);
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            _playerShipMovement.StopMovement();
         }
     }
 }

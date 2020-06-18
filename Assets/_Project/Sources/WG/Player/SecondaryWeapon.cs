@@ -73,7 +73,6 @@ namespace WG.GameX.Player
             
             if (Physics.Raycast(origin.position, direction, out raycastHit, 3000, _layerMask))
             {
-                Debug.Log($"BEam hitting at {raycastHit.collider.name}");
                  var weakPoint = raycastHit.collider.GetComponent<EnemyWeakPoint>();
                  weakPoint.ReduceHealth(20);
                 return raycastHit.point;
