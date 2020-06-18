@@ -1,8 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using WG.GameX.Enemy;
-using WG.GameX.Managers;
 
 namespace WG.GameX.Player
 {

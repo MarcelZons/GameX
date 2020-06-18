@@ -15,7 +15,7 @@ namespace WG.GameX.Player
         [Header("#######################################")]
         private float _horizontal;
         private float _vertical;
-        private Vector2 _mouseDragHorizontal;
+        private Vector2 _mouseDragHorizontal = new Vector2();
         private bool _isShooting;
 
 

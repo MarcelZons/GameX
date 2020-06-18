@@ -22,8 +22,18 @@ namespace WG.GameX.MenuScene
             
             _startButton.onClick.AddListener(() =>
             {
-                Debug.Log($"Current level: {_difficultyLevel}");
-                SceneManager.LoadScene("GameScene");
+                switch (_difficultyLevel)
+                {
+                    case DifficultyLevelSelection.Easy:
+                        SceneManager.LoadScene("GameScene_Easy");
+                        break;
+                    case DifficultyLevelSelection.Normal:
+                        SceneManager.LoadScene("GameScene_Normal");
+                        break;
+                    case DifficultyLevelSelection.Hard:
+                        SceneManager.LoadScene("GameScene_Hard");
+                        break;
+                }
             });
         }
 
