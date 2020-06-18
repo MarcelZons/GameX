@@ -8,19 +8,39 @@ namespace WG.GameX.Player
 {
     public class Shield : MonoBehaviour
     {
-        private ColorPropertySetter _shieldColorSetter;
-        private int _shieldHealth;
         private static readonly int Hit = Animator.StringToHash("Hit");
         private static readonly int Active = Animator.StringToHash("Active");
+        
+        private ColorPropertySetter _shieldColorSetter;
+        private int _shieldHealth;
         private int _initialHealth;
         private Gradient _colorGradiant;
-        [SerializeField] private MeshCollider [] _meshColliders;
-
+        private MeshCollider [] _meshColliders;
+        private ShieldCover [] _shieldCovers;
+        private ShieldCoverHitEvent[] _shieldCoverHitEvents;
         private bool _isShieldActive;
         private void Awake()
         {
             _shieldColorSetter = GetComponentInChildren<ColorPropertySetter>();
             _meshColliders = GetComponentsInChildren<MeshCollider>();
+            _shieldCovers = GetComponentsInChildren<ShieldCover>();
+        }
+
+        private void Start()
+        {
+            _shieldCoverHitEvents = new ShieldCoverHitEvent[_shieldCovers.Length];
+            for (int i = 0; i < _shieldCovers.Length; i++)
+            {
+                _shieldCoverHitEvents[i] = _shieldCovers[i].ShieldCoverTakingHit;
+            }
+
+            foreach (var shieldCoverHitEvent in _shieldCoverHitEvents)
+            {
+                shieldCoverHitEvent.AddListener((bullet) =>
+                {
+                    ReduceShieldHealth(bullet.DamageAmount);
+                });
+            }
         }
 
         public void Setup(int initialHealth, Gradient colorGradiant)
@@ -32,12 +52,11 @@ namespace WG.GameX.Player
             _isShieldActive = true;
         }
         
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision other)
         {
-            Debug.Log($" {gameObject.name} Was hit by {other.gameObject} with tag {other.tag}");
-            if (other.CompareTag("Bullet"))
+            if (other.gameObject.CompareTag("Bullet"))
             {
-                ReduceShieldHealth(other.GetComponent<Bullet>().DamageAmount);
+                ReduceShieldHealth(other.gameObject.GetComponent<Bullet>().DamageAmount);
             }
         }
 

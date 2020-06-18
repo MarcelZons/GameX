@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using WG.GameX.Managers;
 
 namespace WG.GameX.Player
 {
     public class ShieldController : MonoBehaviour
     {
         [SerializeField] private Gradient _colorGradiant;
-        [SerializeField] private int _health;
-        [SerializeField] private int _subtractionAmount;
-        [SerializeField] private Shield[] _shields;
+        private int _health;
+        private Shield[] _shields;
 
         private void Awake()
         {
@@ -18,6 +18,7 @@ namespace WG.GameX.Player
 
         private void Start()
         {
+            _health = DependencyMediator.Instance.PlayerShipController.ShieldHealth;
             foreach (var shield in _shields)
             {
                 shield.Setup(_health, _colorGradiant);

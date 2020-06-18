@@ -37,5 +37,10 @@ namespace WG.GameX.Managers
         {
             _informationText.text = "";
         }
+
+        public void SetHealth(float healthFactor)
+        {
+            DependencyMediator.Instance.PlayerHudController.SetHealth(healthFactor);
+        }
     }
 }

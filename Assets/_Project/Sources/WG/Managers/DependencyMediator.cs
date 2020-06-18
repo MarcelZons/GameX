@@ -21,13 +21,13 @@ namespace WG.GameX.Managers
             }
         }
         
-        [SerializeField] private GameSceneManager _gameSceneManager;
+        [SerializeField] private GameSceneManager gameGameSceneManager;
         [SerializeField] private GameUiController _gameUiController;
         [SerializeField] private PlayerShipController _playerShipController;
         [SerializeField] private PlayerHudController _playerHudController;
         public GameUiController UiController => _gameUiController;
         public PlayerShipController PlayerShipController => _playerShipController;
-        public GameSceneManager SceneManager => _gameSceneManager;
+        public GameSceneManager GameSceneManager => gameGameSceneManager;
         public Camera MainCamera => _playerShipController.MainCamera;
         public PlayerHudController PlayerHudController => _playerHudController;
     }

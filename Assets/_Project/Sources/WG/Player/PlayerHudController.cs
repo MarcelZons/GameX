@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace WG.GameX.Ui
 {
@@ -7,7 +8,7 @@ namespace WG.GameX.Ui
         [SerializeField] private CenterImageController _centerImageController;
         [SerializeField] private FilledBar _energyFillbar;
         [SerializeField] private FilledBar _speedFillBar;
-        
+
         public void SetHealth(float health)
         {
             _centerImageController.UpdateValue(health);

@@ -41,6 +41,8 @@
                 <e p="MouseClickDrag.cs" t="Include" />
                 <e p="ObjectLocatorArrow.cs" t="Include" />
                 <e p="PlayerCameraController.cs" t="Include" />
+                <e p="PlayerCollider.cs" t="Include" />
+                <e p="PlayerHealthController.cs" t="Include" />
                 <e p="PlayerHudController.cs" t="Include" />
                 <e p="PlayerInputController.cs" t="Include" />
                 <e p="PlayerRadar.cs" t="Include" />
@@ -54,6 +56,7 @@
                 <e p="SelectablePrimaryWeapon.cs" t="Include" />
                 <e p="Shield.cs" t="Include" />
                 <e p="ShieldController.cs" t="Include" />
+                <e p="ShieldCover.cs" t="Include" />
                 <e p="TopUiDisplayEvent.cs" t="Include" />
               </e>
               <e p="Util" t="Include">
