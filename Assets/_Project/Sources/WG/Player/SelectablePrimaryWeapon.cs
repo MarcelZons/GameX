@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using WG.GameX.Enemy;
 using WG.GameX.Managers;
 
 namespace WG.GameX.Player
@@ -75,6 +76,8 @@ namespace WG.GameX.Player
             
             if (Physics.Raycast(origin.position, direction, out raycastHit, 3000, _layerMask))
             {
+                var weakPoint = raycastHit.collider.GetComponent<EnemyWeakPoint>();
+                weakPoint.ReduceHealth();
                 return raycastHit.point;
             }
 

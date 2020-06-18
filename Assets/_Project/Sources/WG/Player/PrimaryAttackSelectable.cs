@@ -38,15 +38,16 @@ namespace WG.GameX.Player
                 {
                     if (_enemyShipController.EnemyWeakPoints.Count == 0)
                     {
-                        _attackController.SelectableFireCommand(_enemyShipController.transform.ToList(), 1f,
-                            _enemyShipController.LayerMask, _leftOrigin, _rightOrigin);
+                        // _attackController.SelectableFireCommand(_enemyShipController.transform.ToList(), 1f,
+                        //     _enemyShipController.LayerMask, _leftOrigin, _rightOrigin);
+                        Debug.LogError($"All weakpoint damanged for this ship.. Destroy now");
                     }
                     else
                     {
                         var weakPointTransforms = _enemyShipController.EnemyWeakPoints.Select(point => point.transform)
                             .ToList();
                         _attackController.SelectableFireCommand(weakPointTransforms,1f,
-                            _enemyShipController.LayerMask, _leftOrigin, _rightOrigin);
+                            _enemyShipController.WeakpointLayerMask, _leftOrigin, _rightOrigin);
                     }
                 }
             }

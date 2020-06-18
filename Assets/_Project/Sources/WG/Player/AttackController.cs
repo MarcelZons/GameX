@@ -95,7 +95,7 @@ namespace WG.GameX.Player
             else if (_playerRadar.HasEnemy)
             {
                 var nearestEnemy = _playerRadar.GetNearestEnemy();
-                _secondaryWeapon.FireAtTarget(_originTransform, nearestEnemy.transform, nearestEnemy.LayerMask);
+                _secondaryWeapon.FireAtTarget(_originTransform, nearestEnemy.transform, nearestEnemy.WeakpointLayerMask);
                 Invoke(nameof(StopSecondaryFire), 1f);
             }
 

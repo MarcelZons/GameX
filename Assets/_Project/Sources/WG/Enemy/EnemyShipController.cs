@@ -5,17 +5,19 @@ using WG.GameX.Managers;
 
 namespace WG.GameX.Enemy
 {
-    public class EnemyShipUiController: MonoBehaviour
-    {
-        
-    }
     public class EnemyShipController : MonoBehaviour
     {
+        [Header("##### Tuning Parameter - Turret")]
         [SerializeField] private float _turretActivationDistance = 300;
-        [SerializeField] private GameSceneManager _gameSceneManager;
-        [SerializeField] private LayerMask _layer;
-        public LayerMask LayerMask => _layer;
+        [SerializeField] private float _turretFrequency;
+        [Range(10,1000)]
+        [SerializeField] private float _bulletVelocity;
+        
+        [Header("###############################")]
+        [SerializeField] private LayerMask _weakpointLayer;
+        
 
+        public LayerMask WeakpointLayerMask => _weakpointLayer;
         private List<EnemyWeakPoint> _enemyWeakPoints;
         private List<EnemyTurret> _enemyTurrets;
 
@@ -28,10 +30,13 @@ namespace WG.GameX.Enemy
         {
             _enemyWeakPoints = GetComponentsInChildren<EnemyWeakPoint>().ToList();
             _enemyTurrets = GetComponentsInChildren<EnemyTurret>().ToList();
-            
+        }
+
+        private void Start()
+        {
             foreach (var enemyTurret in _enemyTurrets)
             {
-                enemyTurret.Setup(_gameSceneManager.DependencyMediator.PlayerShipController.transform, _turretActivationDistance);
+                enemyTurret.Setup(DependencyMediator.Instance.PlayerShipController.transform, _turretActivationDistance, _turretFrequency, _bulletVelocity);
             }
         }
     }
