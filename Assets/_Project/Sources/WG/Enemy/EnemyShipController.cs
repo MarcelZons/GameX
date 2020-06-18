@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using VSX.UniversalVehicleCombat;
 using WG.GameX.Managers;
 
 namespace WG.GameX.Enemy
@@ -43,11 +44,16 @@ namespace WG.GameX.Enemy
             if (_enemyWeakPoints.Count == 0)
             {
                 DependencyMediator.Instance.ExplosionFx.PlayMediumExplosion(transform.position);
-                Destroy(gameObject);
+                DestroyShip();
                 return null;
             }
             
             return _enemyWeakPoints.Select(point => point.transform).ToList();
+        }
+
+        private void DestroyShip()
+        {
+            Destroy(gameObject);
         }
 
         public void RemoveWeakPoint(EnemyWeakPoint enemyWeakPoint)

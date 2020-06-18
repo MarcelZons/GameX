@@ -13,6 +13,7 @@
                 <e p="BulletExplode.cs" t="Include" />
               </e>
               <e p="Enemy" t="Include">
+                <e p="BigEnemyMover.cs" t="Include" />
                 <e p="EnemyShipController.cs" t="Include" />
                 <e p="EnemyTurret.cs" t="Include" />
                 <e p="EnemyWeakPoint.cs" t="Include" />
