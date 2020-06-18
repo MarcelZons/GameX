@@ -63,6 +63,7 @@
               <e p="Util" t="Include">
                 <e p="ColorPropertySetter.cs" t="Include" />
                 <e p="Constants.cs" t="Include" />
+                <e p="ExplosionFx.cs" t="Include" />
                 <e p="FloatExtension.cs" t="Include" />
                 <e p="TMP_Typewriter" t="Include">
                   <e p="Example" t="Include">

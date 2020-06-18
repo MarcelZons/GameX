@@ -12,6 +12,9 @@ namespace WG.GameX.Enemy
         [SerializeField] private float _turretFrequency;
         [Range(10,1000)]
         [SerializeField] private float _bulletVelocity;
+
+        [Range(1,100)]
+        [SerializeField] private float _turretRobustness;
         
         [Header("###############################")]
         [SerializeField] private LayerMask _weakpointLayer;
@@ -20,11 +23,6 @@ namespace WG.GameX.Enemy
         public LayerMask WeakpointLayerMask => _weakpointLayer;
         private List<EnemyWeakPoint> _enemyWeakPoints;
         private List<EnemyTurret> _enemyTurrets;
-
-        public Vector3 Position => transform.position;
-        public LayerMask Layer => gameObject.layer;
-
-        public List<EnemyWeakPoint> EnemyWeakPoints => _enemyWeakPoints;
 
         private void Awake()
         {
@@ -36,8 +34,25 @@ namespace WG.GameX.Enemy
         {
             foreach (var enemyTurret in _enemyTurrets)
             {
-                enemyTurret.Setup(DependencyMediator.Instance.PlayerShipController.transform, _turretActivationDistance, _turretFrequency, _bulletVelocity);
+                enemyTurret.Setup(DependencyMediator.Instance.PlayerShipController.transform, _turretActivationDistance, _turretFrequency, _bulletVelocity, _turretRobustness);
             }
+        }
+
+        public List<Transform> GetEnemyWeakpoints()
+        {
+            if (_enemyWeakPoints.Count == 0)
+            {
+                DependencyMediator.Instance.ExplosionFx.PlayMediumExplosion(transform.position);
+                Destroy(gameObject);
+                return null;
+            }
+            
+            return _enemyWeakPoints.Select(point => point.transform).ToList();
+        }
+
+        public void RemoveWeakPoint(EnemyWeakPoint enemyWeakPoint)
+        {
+            _enemyWeakPoints.Remove(enemyWeakPoint);
         }
     }
 }

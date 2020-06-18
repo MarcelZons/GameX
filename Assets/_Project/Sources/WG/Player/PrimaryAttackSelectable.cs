@@ -1,8 +1,6 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using WG.GameX.Enemy;
-using WG.GameX.Util;
 
 namespace WG.GameX.Player
 { 
@@ -36,19 +34,10 @@ namespace WG.GameX.Player
             {
                 if (Input.GetMouseButton(0) && _enemyShipController != null)
                 {
-                    if (_enemyShipController.EnemyWeakPoints.Count == 0)
-                    {
-                        // _attackController.SelectableFireCommand(_enemyShipController.transform.ToList(), 1f,
-                        //     _enemyShipController.LayerMask, _leftOrigin, _rightOrigin);
-                        Debug.LogError($"All weakpoint damanged for this ship.. Destroy now");
-                    }
-                    else
-                    {
-                        var weakPointTransforms = _enemyShipController.EnemyWeakPoints.Select(point => point.transform)
-                            .ToList();
-                        _attackController.SelectableFireCommand(weakPointTransforms,1f,
-                            _enemyShipController.WeakpointLayerMask, _leftOrigin, _rightOrigin);
-                    }
+                    var weakPointTransforms = _enemyShipController.GetEnemyWeakpoints();
+                    
+                    if(weakPointTransforms!= null)
+                        _attackController.SelectableFireCommand(weakPointTransforms,1f, _attackController.EnemyWeakPointLayerMask, _leftOrigin, _rightOrigin);
                 }
             }
         }
@@ -62,14 +51,12 @@ namespace WG.GameX.Player
             {
                 _isEnemySelected = true;
                 _enemyShipController = hit.collider.gameObject.GetComponent<EnemyShipController>();
-                //Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
                 _aimCursorImage.color = _aimCursorMarked;
             }
             else
             {
                 _isEnemySelected = false;
                 _aimCursorImage.color = _aimCursorNormal;
-                //Cursor.SetCursor(null, hotSpot, cursorMode);
             }
         }
     }

@@ -18,6 +18,7 @@ namespace WG.GameX.Enemy
 
         private float _activationDistance;
         private float _bulletVelocity;
+        private float _turretRobustness;
 
         public float ActivationDistance => _activationDistance;
 
@@ -29,12 +30,13 @@ namespace WG.GameX.Enemy
 
         //enemyTurret.Setup(DependencyMediator.Instance.PlayerShipController.transform, _turretActivationDistance, _turretFrequency, _bulletVelocity);
         public void Setup(Transform playerTransform, float turretActivationDistance, float turretFrequency,
-            float bulletVelocity)
+            float bulletVelocity, float turretRobustness)
         {
             _playerTransform = playerTransform;
             InvokeRepeating(nameof(ShootAtPlayer), 0, Random.Range(.15f, turretFrequency));
             _activationDistance = turretActivationDistance;
             _bulletVelocity = bulletVelocity;
+            _turretRobustness = turretRobustness;
         }
 
         private void Update()
@@ -46,11 +48,11 @@ namespace WG.GameX.Enemy
             var horizontalDirection = direction;
             horizontalDirection.y = 0;
             var horizontalLookRotation = Quaternion.LookRotation(horizontalDirection);
-            _horizontalArm.rotation = Quaternion.Slerp(_horizontalArm.rotation, horizontalLookRotation, Time.deltaTime);
+            _horizontalArm.rotation = Quaternion.Slerp(_horizontalArm.rotation, horizontalLookRotation, Time.deltaTime * _turretRobustness);
 
             var verticalDirection = direction;
             var verticalLookRotation = Quaternion.LookRotation(verticalDirection);
-            _verticalArm.rotation = Quaternion.Slerp(_verticalArm.rotation, verticalLookRotation, Time.deltaTime);
+            _verticalArm.rotation = Quaternion.Slerp(_verticalArm.rotation, verticalLookRotation, Time.deltaTime * _turretRobustness);
         }
 
         private void ShootAtPlayer()

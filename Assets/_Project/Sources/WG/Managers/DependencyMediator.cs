@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 using WG.GameX.Player;
 using WG.GameX.Ui;
+using WG.GameX.Util;
 
 namespace WG.GameX.Managers
 {
@@ -25,10 +27,13 @@ namespace WG.GameX.Managers
         [SerializeField] private GameUiController _gameUiController;
         [SerializeField] private PlayerShipController _playerShipController;
         [SerializeField] private PlayerHudController _playerHudController;
+        [FormerlySerializedAs("_explosionFx")] [SerializeField] private ExplosionFx explosionExplosionFx;
         public GameUiController UiController => _gameUiController;
         public PlayerShipController PlayerShipController => _playerShipController;
         public GameSceneManager GameSceneManager => gameGameSceneManager;
         public Camera MainCamera => _playerShipController.MainCamera;
         public PlayerHudController PlayerHudController => _playerHudController;
+
+        public ExplosionFx ExplosionFx => explosionExplosionFx;
     }
 }

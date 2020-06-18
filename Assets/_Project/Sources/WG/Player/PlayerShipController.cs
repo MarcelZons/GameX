@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using WG.GameX.Enemy;
 
 namespace WG.GameX.Player
 {
@@ -29,7 +30,7 @@ namespace WG.GameX.Player
         [SerializeField] private Transform _lookAtReferenceMiddle;
         [SerializeField] private Transform _lookAtReferenceBottom;
         [SerializeField] private List<Transform> _gunPoints;
-        
+        [SerializeField] private PlayerRadar _playerRadar;
         
         private PlayerCameraController _playerCameraController;
         private PlayerShipMovement _playerShipMovement;
@@ -90,6 +91,11 @@ namespace WG.GameX.Player
                 _playerInputController.Vertical,
                 _playerInputController.MouseDragHorizontal.y
                 , _playerShipMovement.SpeedFactor);
+        }
+
+        public void RemoveFromRadar(EnemyWeakPoint enemyWeakPoint)
+        {
+            _playerRadar.RemoveFromList(enemyWeakPoint);
         }
     }
 }

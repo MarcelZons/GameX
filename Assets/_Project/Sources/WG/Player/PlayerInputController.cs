@@ -6,11 +6,13 @@ namespace WG.GameX.Player
 {
     public class PlayerInputController : MonoBehaviour
     {
+        [Header("########### Tuning components")]
         [Space(20)] [Header("Damping Values: (Low to High) = (Slower to Agile)")] [Range(1f, 5f)] [SerializeField]
         private float _horizontalDamping;
 
         [Range(1f, 10f)] [SerializeField] private float _verticalDamping;
 
+        [Header("#######################################")]
         private float _horizontal;
         private float _vertical;
         private Vector2 _mouseDragHorizontal;

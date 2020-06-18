@@ -29,6 +29,9 @@ namespace WG.GameX.Player
 
         public void FireAtTarget(Transform target, LayerMask layerMask, float duration, Transform leftOrigin, Transform rightOrigin)
         {
+            if(target == null)
+                return;
+            
             if (_playerTransform.InverseTransformPoint(target.position).x < 0)
                 _origin = leftOrigin;
             else
@@ -57,6 +60,9 @@ namespace WG.GameX.Player
         {
             if (_isFired)
             {
+                if(_target == null)
+                    return;
+                
                 _beamMuzzleObject.transform.position = _origin.position;
                 var hitPoint = GetHitPoint(_origin, _target);
 
