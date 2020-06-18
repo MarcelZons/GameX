@@ -25,6 +25,7 @@
                 <e p="DependencyMediator.cs" t="Include" />
                 <e p="GameSceneManager.cs" t="Include" />
                 <e p="GameUiController.cs" t="Include" />
+                <e p="MessageBoxController.cs" t="Include" />
                 <e p="PlayerHud.cs" t="Include" />
               </e>
               <e p="MenuScene" t="Include">

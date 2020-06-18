@@ -89,7 +89,7 @@ namespace WG.GameX.Player
             {
                 meshCollider.enabled = false;
             }
-            DependencyMediator.Instance.UiController.SetInformationText($"{gameObject.name} Down!");
+            DependencyMediator.Instance.UiController.SetInformationText($"{gameObject.name} Down!", MessageType.Negative);
             StartCoroutine(ReplenishShield());
         }
 
@@ -106,7 +106,7 @@ namespace WG.GameX.Player
             {
                 meshCollider.enabled = true;
             }
-            DependencyMediator.Instance.UiController.SetInformationText($"{gameObject.name} Recharged!");
+            DependencyMediator.Instance.UiController.SetInformationText($"{gameObject.name} Recharged!", MessageType.Positive);
             _shieldHealth = _initialHealth;
             _isShieldActive = true;
         }

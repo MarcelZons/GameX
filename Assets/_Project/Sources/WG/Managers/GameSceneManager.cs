@@ -10,7 +10,7 @@ namespace WG.GameX.Managers
         private void Start()
         {
             _dependency.PlayerShipController.SecondaryWeaponReady.AddListener(
-                (message) => _dependency.UiController.SetInformationText(message)
+                (message) => _dependency.UiController.SetInformationText(message, MessageType.Neutral)
             );
         }
 
