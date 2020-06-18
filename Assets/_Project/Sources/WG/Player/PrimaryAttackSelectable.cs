@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using WG.GameX.Enemy;
 using WG.GameX.Util;
 
@@ -13,23 +14,24 @@ namespace WG.GameX.Player
         [SerializeField] private Transform _leftOrigin;
         [SerializeField] private Transform _rightOrigin;
         
-        public Texture2D cursorTexture;
-        public CursorMode cursorMode = CursorMode.Auto;
-        public Vector2 hotSpot = Vector2.zero;
-
+        [SerializeField] private RectTransform _aimCursor;
+        [SerializeField] private Color _aimCursorMarked, _aimCursorNormal;
+        
         private AttackController _attackController;
-
         private bool _isEnemySelected;
-
         private EnemyShipController _enemyShipController;
-
+        private Image _aimCursorImage;
+        
         private void Awake()
         {
             _attackController = GetComponent<AttackController>();
+            _aimCursorImage = _aimCursor.GetComponent<Image>();
+            Cursor.visible = false;
         }
 
         private void Update()
         {
+            _aimCursor.position = Input.mousePosition;
             if (_isEnemySelected)
             {
                 if (Input.GetMouseButton(0) && _enemyShipController != null)
@@ -59,12 +61,14 @@ namespace WG.GameX.Player
             {
                 _isEnemySelected = true;
                 _enemyShipController = hit.collider.gameObject.GetComponent<EnemyShipController>();
-                Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+                //Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+                _aimCursorImage.color = _aimCursorMarked;
             }
             else
             {
                 _isEnemySelected = false;
-                Cursor.SetCursor(null, hotSpot, cursorMode);
+                _aimCursorImage.color = _aimCursorNormal;
+                //Cursor.SetCursor(null, hotSpot, cursorMode);
             }
         }
     }

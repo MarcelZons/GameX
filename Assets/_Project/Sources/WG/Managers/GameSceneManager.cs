@@ -10,7 +10,7 @@ namespace WG.GameX.Managers
         private void Start()
         {
             _dependency.PlayerShipController.SecondaryWeaponReady.AddListener(
-                (message) => _dependency.UiController.SetInformationText(message)
+                (message) => _dependency.UiController.SetInformationText(message, MessageType.Neutral)
             );
         }
 
@@ -26,6 +26,11 @@ namespace WG.GameX.Managers
 
             var secondaryWeaponsReadiness = _dependency.PlayerShipController.SecondaryWeaponFilledStatus;
             _dependency.UiController.SetEnergyHud(secondaryWeaponsReadiness);
+        }
+
+        public void GameOver(bool gameOwn)
+        {
+            Debug.Log($"Player won {gameOwn}");
         }
     }
 }

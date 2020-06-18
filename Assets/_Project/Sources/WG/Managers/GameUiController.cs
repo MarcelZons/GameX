@@ -6,36 +6,25 @@ namespace WG.GameX.Managers
 {
     public class GameUiController : MonoBehaviour
     {
-        [SerializeField] private PlayerHud _speedHud;
-        [SerializeField] private PlayerHud _energyHud;
-        [SerializeField] private TextMeshProUGUI _informationText;
-        private TMP_Typewriter _inforamtionTextTypewriter;
-
-        private void Awake()
-        {
-            _inforamtionTextTypewriter = _informationText.gameObject.GetComponent<TMP_Typewriter>();
-        }
-
+        [SerializeField] private MessageBoxController _messageBoxController;
         public void SetSpeedHud(float value)
         {
-            _speedHud.SetValue(value);
+            DependencyMediator.Instance.PlayerHudController.SetSpeed(value);
         }
 
         public void SetEnergyHud(float value)
         {
-            _energyHud.SetValue(value);
+            DependencyMediator.Instance.PlayerHudController.SetEnergyBar(value);
         }
 
-        public void SetInformationText(string info)
+        public void SetInformationText(string info, MessageType messageType)
         {
-            CancelInvoke(nameof(HideInformationText));
-            _inforamtionTextTypewriter.Play(info, 50, null);
-            Invoke(nameof(HideInformationText), 3f);
+            _messageBoxController.SetMessage(info, messageType);
         }
 
-        private void HideInformationText()
+        public void SetHealth(float healthFactor)
         {
-            _informationText.text = "";
+            DependencyMediator.Instance.PlayerHudController.SetHealth(healthFactor);
         }
     }
 }

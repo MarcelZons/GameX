@@ -7,20 +7,30 @@ namespace WG.GameX.Player
     [RequireComponent(typeof(PlayerInputController))]
     public class PlayerShipController : MonoBehaviour
     {
-        [Header("------ Manager Component ------")] [Header("-------Transforms----------")] [SerializeField]
-        private Transform _shipTransform;
-
-        [SerializeField] private Transform _pivotTransform;
-        [SerializeField] private Transform _lookAtReferenceMiddle;
-        [SerializeField] private Transform _lookAtReferenceBottom;
-        [SerializeField] private List<Transform> _gunPoints;
-
-        [Space(10)] [Header("___________Movement___________________")]
+        [Header("##########Tuning Components of Player ####################")]
+        [Space(10)] 
+        [Header("___________Movement___________________")]
         [Range(0, 5f)] [SerializeField] private float _minSpeed;
 
         [Range(0f, 10f)] [SerializeField] private float _maxSpeed;
         [Range(1, 10f)] [SerializeField] private float _accelaration;
 
+        [Space(10)] 
+        [Header("___________Health (How many hits can take)")]
+        [SerializeField] private int _health = 100;
+
+        [SerializeField] private int _shieldHealth = 10;
+        
+        [Space(20)]
+        [Header("##############################")]
+        
+        [SerializeField] private Transform _shipTransform;
+        [SerializeField] private Transform _pivotTransform;
+        [SerializeField] private Transform _lookAtReferenceMiddle;
+        [SerializeField] private Transform _lookAtReferenceBottom;
+        [SerializeField] private List<Transform> _gunPoints;
+        
+        
         private PlayerCameraController _playerCameraController;
         private PlayerShipMovement _playerShipMovement;
         private PlayerInputController _playerInputController;
@@ -32,7 +42,11 @@ namespace WG.GameX.Player
         public SecondaryWeaponStatusEvent SecondaryWeaponReady => secondaryWeaponReady;
         public Camera MainCamera => _playerCameraController.CameraComponent;
         
-        
+        public int Health => _health;
+
+        public int ShieldHealth => _shieldHealth;
+
+
         private void Awake()
         {
             _playerInputController = GetComponent<PlayerInputController>();

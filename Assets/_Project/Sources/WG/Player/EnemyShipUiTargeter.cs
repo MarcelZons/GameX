@@ -31,6 +31,7 @@ namespace WG.GameX.Player
         
         private bool _showTopUi;
         private TopUiDisplayEvent topUiDisplayEvent;
+        private string _enemyName;
 
         public TopUiDisplayEvent TopUiDisplayEvent => topUiDisplayEvent;
 
@@ -62,7 +63,7 @@ namespace WG.GameX.Player
                 else
                 {
                     SetImageVisibilityState(true);
-                    _distanceText.text = $"{(int)distance}m";
+                    _distanceText.text = $"{_enemyName}";
                     _distanceTargeterRectTransform.anchoredPosition = WorldToCanvasPosition(_canvasRectTransform, _mainCamera, _target.position);
                 }
             }
@@ -128,6 +129,11 @@ namespace WG.GameX.Player
         public void SetHealthBarValue(float health)
         {
             _targeterHealthBarImageFg.fillAmount = health;
+        }
+
+        public void SetEnemyName(string gameObjectName)
+        {
+            _enemyName = gameObjectName;
         }
     }
 }

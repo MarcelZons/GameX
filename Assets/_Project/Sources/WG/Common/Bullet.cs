@@ -32,7 +32,7 @@ namespace WG.GameX.Common
             _rigidbody.velocity = bulletVelocity;
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision collision)
         {
             _lineRenderer.enabled = false;
             _bulletExplode.Play();
