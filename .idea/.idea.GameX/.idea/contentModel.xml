@@ -33,12 +33,15 @@
               <e p="Player" t="Include">
                 <e p="AttackController.cs" t="Include" />
                 <e p="BigEnemyHealth.cs" t="Include" />
+                <e p="CenterImageController.cs" t="Include" />
                 <e p="EnemyShipUiController.cs" t="Include" />
                 <e p="EnemyShipUiTargeter.cs" t="Include" />
                 <e p="EnemyWeakPointUiTargeter.cs" t="Include" />
+                <e p="FilledBar.cs" t="Include" />
                 <e p="MouseClickDrag.cs" t="Include" />
                 <e p="ObjectLocatorArrow.cs" t="Include" />
                 <e p="PlayerCameraController.cs" t="Include" />
+                <e p="PlayerHudController.cs" t="Include" />
                 <e p="PlayerInputController.cs" t="Include" />
                 <e p="PlayerRadar.cs" t="Include" />
                 <e p="PlayerShipAnimationController.cs" t="Include" />

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using WG.GameX.Player;
+using WG.GameX.Ui;
 
 namespace WG.GameX.Managers
 {
@@ -23,15 +24,11 @@ namespace WG.GameX.Managers
         [SerializeField] private GameSceneManager _gameSceneManager;
         [SerializeField] private GameUiController _gameUiController;
         [SerializeField] private PlayerShipController _playerShipController;
-
+        [SerializeField] private PlayerHudController _playerHudController;
         public GameUiController UiController => _gameUiController;
-
         public PlayerShipController PlayerShipController => _playerShipController;
-
         public GameSceneManager SceneManager => _gameSceneManager;
         public Camera MainCamera => _playerShipController.MainCamera;
-        
-        
-        
+        public PlayerHudController PlayerHudController => _playerHudController;
     }
 }

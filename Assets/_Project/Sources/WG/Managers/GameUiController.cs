@@ -18,12 +18,12 @@ namespace WG.GameX.Managers
 
         public void SetSpeedHud(float value)
         {
-            _speedHud.SetValue(value);
+            DependencyMediator.Instance.PlayerHudController.SetSpeed(value);
         }
 
         public void SetEnergyHud(float value)
         {
-            _energyHud.SetValue(value);
+            DependencyMediator.Instance.PlayerHudController.SetEnergyBar(value);
         }
 
         public void SetInformationText(string info)
