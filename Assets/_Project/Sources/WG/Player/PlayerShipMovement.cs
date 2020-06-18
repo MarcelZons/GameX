@@ -39,5 +39,10 @@ namespace WG.GameX.Player
             //_shipTransform.position += position * _forwardSpeed;
             _rigidBody.velocity = (position * _forwardSpeed * 100);
         }
+
+        public void StopMovement()
+        {
+            _forwardSpeed = 0;
+        }
     }
 }

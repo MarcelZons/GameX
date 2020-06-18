@@ -13,6 +13,7 @@
                 <e p="BulletExplode.cs" t="Include" />
               </e>
               <e p="Enemy" t="Include">
+                <e p="BigEnemyMover.cs" t="Include" />
                 <e p="EnemyShipController.cs" t="Include" />
                 <e p="EnemyTurret.cs" t="Include" />
                 <e p="EnemyWeakPoint.cs" t="Include" />
@@ -63,6 +64,7 @@
               <e p="Util" t="Include">
                 <e p="ColorPropertySetter.cs" t="Include" />
                 <e p="Constants.cs" t="Include" />
+                <e p="ExplosionFx.cs" t="Include" />
                 <e p="FloatExtension.cs" t="Include" />
                 <e p="TMP_Typewriter" t="Include">
                   <e p="Example" t="Include">

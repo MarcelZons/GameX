@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce570152770488b972e5fdc3465f2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selfDestructTime: 5
+  _selfDestructTime: 10
   _bulletExplode: {fileID: 7210977256549950871}
   _damageAmount: 1
 --- !u!1 &5491814195098161033

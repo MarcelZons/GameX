@@ -7,6 +7,8 @@ namespace WG.GameX.Player
 {
     public class AttackController : MonoBehaviour
     {
+        [SerializeField] private LayerMask _enemyWeakPointLayerMask;
+        
         [Header("Primary Weapons ------------------------")] [SerializeField]
         private float _primaryBulletVelocity;
 
@@ -47,6 +49,8 @@ namespace WG.GameX.Player
 
         public SecondaryWeaponStatusEvent SecondaryWeaponStatus => _secondaryWeaponStatus;
 
+        public LayerMask EnemyWeakPointLayerMask => _enemyWeakPointLayerMask;
+
         private void Awake()
         {
             _secondaryWeaponStatus = new SecondaryWeaponStatusEvent();
@@ -78,7 +82,7 @@ namespace WG.GameX.Player
                 return;
             }
 
-            if (_playerRadar.HasEnemyWeakPoints == false && _playerRadar.HasEnemy == false)
+            if (_playerRadar.HasEnemyWeakPoints == false)
             {
                 _secondaryWeaponStatus.Invoke("No Enemy in the Radar");
                 return;
@@ -87,15 +91,7 @@ namespace WG.GameX.Player
             if (_playerRadar.HasEnemyWeakPoints)
             {
                 var nearestWeakPoint = _playerRadar.GetNearestWeakPoint();
-                _secondaryWeapon.FireAtTarget(_originTransform, nearestWeakPoint.transform,
-                    nearestWeakPoint.LayerMask);
-                Invoke(nameof(StopSecondaryFire), 1f);
-            }
-
-            else if (_playerRadar.HasEnemy)
-            {
-                var nearestEnemy = _playerRadar.GetNearestEnemy();
-                _secondaryWeapon.FireAtTarget(_originTransform, nearestEnemy.transform, nearestEnemy.LayerMask);
+                _secondaryWeapon.FireAtTarget(_originTransform, nearestWeakPoint.transform, EnemyWeakPointLayerMask);
                 Invoke(nameof(StopSecondaryFire), 1f);
             }
 

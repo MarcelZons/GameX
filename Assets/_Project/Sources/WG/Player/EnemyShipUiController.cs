@@ -16,6 +16,7 @@ namespace WG.GameX.Player
         {
             _enemyShipUiTargeter = GetComponentInChildren<EnemyShipUiTargeter>();
             _enemyShipUiTargeter.SetEnemyName(gameObject.name);
+            _shipNameText.text = gameObject.name;
         }
 
         private void Start()

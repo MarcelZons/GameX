@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using WG.GameX.Enemy;
 
 namespace WG.GameX.Player
 {
@@ -51,6 +52,9 @@ namespace WG.GameX.Player
             if (_isFired)
             {
                 _beamMuzzleObject.transform.position = _origin.position;
+                
+                if(_target == null)
+                    return;
                 var hitPoint = GetHitPoint(_origin, _target);
 
                 if (hitPoint == Vector3.zero)
@@ -69,6 +73,8 @@ namespace WG.GameX.Player
             
             if (Physics.Raycast(origin.position, direction, out raycastHit, 3000, _layerMask))
             {
+                 var weakPoint = raycastHit.collider.GetComponent<EnemyWeakPoint>();
+                 weakPoint.ReduceHealth(20);
                 return raycastHit.point;
             }
 

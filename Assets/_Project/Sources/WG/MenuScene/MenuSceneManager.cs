@@ -15,14 +15,25 @@ namespace WG.GameX.MenuScene
         [SerializeField] private Button _startButton;
         private void Start()
         {
+            Cursor.visible = true;
             _easy.onClick.AddListener(() => { _difficultyLevel = DifficultyLevelSelection.Easy; });
             _normal.onClick.AddListener(() => { _difficultyLevel = DifficultyLevelSelection.Normal; });
             _hard.onClick.AddListener(() => { _difficultyLevel = DifficultyLevelSelection.Hard; });
             
             _startButton.onClick.AddListener(() =>
             {
-                Debug.Log($"Current level: {_difficultyLevel}");
-                SceneManager.LoadScene("GameScene");
+                switch (_difficultyLevel)
+                {
+                    case DifficultyLevelSelection.Easy:
+                        SceneManager.LoadScene("GameScene_Easy");
+                        break;
+                    case DifficultyLevelSelection.Normal:
+                        SceneManager.LoadScene("GameScene_Normal");
+                        break;
+                    case DifficultyLevelSelection.Hard:
+                        SceneManager.LoadScene("GameScene_Hard");
+                        break;
+                }
             });
         }
 

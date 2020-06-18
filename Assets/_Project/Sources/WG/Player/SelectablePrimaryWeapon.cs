@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using WG.GameX.Enemy;
 using WG.GameX.Managers;
 
 namespace WG.GameX.Player
@@ -28,6 +29,9 @@ namespace WG.GameX.Player
 
         public void FireAtTarget(Transform target, LayerMask layerMask, float duration, Transform leftOrigin, Transform rightOrigin)
         {
+            if(target == null)
+                return;
+            
             if (_playerTransform.InverseTransformPoint(target.position).x < 0)
                 _origin = leftOrigin;
             else
@@ -56,6 +60,9 @@ namespace WG.GameX.Player
         {
             if (_isFired)
             {
+                if(_target == null)
+                    return;
+                
                 _beamMuzzleObject.transform.position = _origin.position;
                 var hitPoint = GetHitPoint(_origin, _target);
 
@@ -75,6 +82,8 @@ namespace WG.GameX.Player
             
             if (Physics.Raycast(origin.position, direction, out raycastHit, 3000, _layerMask))
             {
+                var weakPoint = raycastHit.collider.GetComponent<EnemyWeakPoint>();
+                weakPoint.ReduceHealth();
                 return raycastHit.point;
             }
 

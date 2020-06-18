@@ -1,11 +1,9 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using WG.GameX.Enemy;
-using WG.GameX.Util;
 
 namespace WG.GameX.Player
-{ 
+{
     public class PrimaryAttackSelectable : MonoBehaviour
     {
         [SerializeField] private LayerMask _enemyLayerMask;
@@ -13,20 +11,27 @@ namespace WG.GameX.Player
 
         [SerializeField] private Transform _leftOrigin;
         [SerializeField] private Transform _rightOrigin;
-        
+
         [SerializeField] private RectTransform _aimCursor;
         [SerializeField] private Color _aimCursorMarked, _aimCursorNormal;
-        
+
         private AttackController _attackController;
         private bool _isEnemySelected;
         private EnemyShipController _enemyShipController;
         private Image _aimCursorImage;
-        
+
+        private float _range;
+
         private void Awake()
         {
             _attackController = GetComponent<AttackController>();
             _aimCursorImage = _aimCursor.GetComponent<Image>();
             Cursor.visible = false;
+        }
+
+        private void Start()
+        {
+            _range = GetComponent<PlayerShipController>().PrimaryAttackRange;
         }
 
         private void Update()
@@ -36,18 +41,11 @@ namespace WG.GameX.Player
             {
                 if (Input.GetMouseButton(0) && _enemyShipController != null)
                 {
-                    if (_enemyShipController.EnemyWeakPoints.Count == 0)
-                    {
-                        _attackController.SelectableFireCommand(_enemyShipController.transform.ToList(), 1f,
-                            _enemyShipController.LayerMask, _leftOrigin, _rightOrigin);
-                    }
-                    else
-                    {
-                        var weakPointTransforms = _enemyShipController.EnemyWeakPoints.Select(point => point.transform)
-                            .ToList();
-                        _attackController.SelectableFireCommand(weakPointTransforms,1f,
-                            _enemyShipController.LayerMask, _leftOrigin, _rightOrigin);
-                    }
+                    var weakPointTransforms = _enemyShipController.GetEnemyWeakpoints();
+
+                    if (weakPointTransforms != null)
+                        _attackController.SelectableFireCommand(weakPointTransforms, 1f,
+                            _attackController.EnemyWeakPointLayerMask, _leftOrigin, _rightOrigin);
                 }
             }
         }
@@ -57,18 +55,16 @@ namespace WG.GameX.Player
             RaycastHit hit;
             Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, 5000, _enemyLayerMask))
+            if (Physics.Raycast(ray, out hit, _range, _enemyLayerMask))
             {
                 _isEnemySelected = true;
                 _enemyShipController = hit.collider.gameObject.GetComponent<EnemyShipController>();
-                //Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
                 _aimCursorImage.color = _aimCursorMarked;
             }
             else
             {
                 _isEnemySelected = false;
                 _aimCursorImage.color = _aimCursorNormal;
-                //Cursor.SetCursor(null, hotSpot, cursorMode);
             }
         }
     }

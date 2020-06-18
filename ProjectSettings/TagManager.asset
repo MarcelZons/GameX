@@ -22,7 +22,7 @@ TagManager:
   - UIManagedFOV
   - UINoFOV
   - Enemy
-  - EnemyWeakPoint
+  - WeakPoint
   - Bullet
   - Player
   - Shield

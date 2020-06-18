@@ -8,9 +8,8 @@
         _FresnelStrength("Fresnel Strength", float) = 1
         _Extrusion("Extrusion", float) = 1
         _NoiseSpeed("Noise Speed", float) = 1
-        
         _Noise ("Noise", 2D) = "white" {}
-        
+        _Alpha ("Alpha", float) = 1
     }
     SubShader
     {
@@ -50,7 +49,7 @@
             float _Extrusion;
             float _FresnelPower;
             float _FresnelStrength;
-
+            float _Alpha;
             float _NoiseSpeed;
 
             v2f vert (appdata v)
@@ -87,7 +86,7 @@
 
                 fixed4 final = _BaseColor;
                 final.rgb += _FresnelColor * i.fresnel;
-                return final * noise;
+                return final * noise * _Alpha;
             }
             ENDCG
         }
