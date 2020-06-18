@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using WG.GameX.Util;
 
+using System;
+using System.Collections.Generic;
+using UnityEngine.Events;
+using WG.GameX.Enemy;
+
 namespace WG.GameX.Player
 {
     public class PlayerShipMovement
@@ -13,6 +18,7 @@ namespace WG.GameX.Player
         private readonly Rigidbody _rigidBody;
         private float _forwardSpeed;
         private float _lerpedForwardMovementSpeed;
+		private float horizontalValueMax = 0.1f;
 
         public float SpeedFactor => _forwardSpeed / _maxSpeed;
 
@@ -31,6 +37,7 @@ namespace WG.GameX.Player
         public void Update(float mouseScroll, float horizontalValue)
         {
             // Rotation
+			horizontalValue = Mathf.Max(Mathf.Min(horizontalValue, horizontalValueMax),(-1)*horizontalValueMax);
             _shipTransform.Rotate(Vector3.up * horizontalValue);
             _lerpedForwardMovementSpeed += mouseScroll;
             _lerpedForwardMovementSpeed = _lerpedForwardMovementSpeed.Clamp(_minSpeed, _maxSpeed);

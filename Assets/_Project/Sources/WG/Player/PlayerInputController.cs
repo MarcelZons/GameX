@@ -7,10 +7,10 @@ namespace WG.GameX.Player
     public class PlayerInputController : MonoBehaviour
     {
         [Header("########### Tuning components")]
-        [Space(20)] [Header("Damping Values: (Low to High) = (Slower to Agile)")] [Range(1f, 5f)] [SerializeField]
+        [Space(20)] [Header("Damping Values: (Low to High) = (Slower to Agile)")] [Range(0.1f, 5f)] [SerializeField]
         private float _horizontalDamping;
 
-        [Range(1f, 10f)] [SerializeField] private float _verticalDamping;
+        [Range(0.0f, 5f)] [SerializeField] private float _verticalDamping;
 
         [Header("#######################################")]
         private float _horizontal;

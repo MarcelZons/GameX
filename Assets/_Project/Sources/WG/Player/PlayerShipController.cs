@@ -15,7 +15,7 @@ namespace WG.GameX.Player
         [Range(0, 5f)] [SerializeField] private float _minSpeed;
 
         [Range(0f, 10f)] [SerializeField] private float _maxSpeed;
-        [Range(1, 10f)] [SerializeField] private float _accelaration;
+        [Range(0.1f, 5f)] [SerializeField] private float _accelaration;
 
         [Space(10)] 
         [Header("___________Health (How many hits can take)")]

@@ -2730,9 +2730,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9456853bfea380f4087fa8297c10e656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _turretActivationDistance: 1000
-  _turretFrequency: 0.25
-  _bulletVelocity: 235
+  _turretActivationDistance: 450
+  _turretFrequency: 10
+  _bulletVelocity: 800
   _turretRobustness: 6.8
   _weakpointLayer:
     serializedVersion: 2
@@ -2765,7 +2765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0.537
-  _initialWeakPointHealth: 5
+  _initialWeakPointHealth: 10
 --- !u!114 &394940628
 MonoBehaviour:
   m_ObjectHideFlags: 0

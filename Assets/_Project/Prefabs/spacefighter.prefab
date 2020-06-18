@@ -2208,11 +2208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minSpeed: 0
-  _maxSpeed: 5
-  _accelaration: 1
-  _health: 20
-  _shieldHealth: 10
-  _primaryAttackRange: 1000
+  _maxSpeed: 0.6
+  _accelaration: 0.4
+  _health: 10
+  _shieldHealth: 20
+  _primaryAttackRange: 450
   _shipTransform: {fileID: 9054589662134478836}
   _pivotTransform: {fileID: 6727699861986602700}
   _lookAtReferenceMiddle: {fileID: 6522820289056307725}
@@ -2233,8 +2233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dd08cc698d41c1995ed6aff6db191a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalDamping: 1.318
-  _verticalDamping: 3.77
+  _horizontalDamping: 3
+  _verticalDamping: 0
 --- !u!114 &1235396420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2257,14 +2257,14 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 1059452319082446, guid: 8366c1cca9a699a4b80d2648bca41b04,
     type: 3}
   _originTransform: {fileID: 284991833933596231}
-  _secondaryWeapnFireFrequency: 5
+  _secondaryWeapnFireFrequency: 10
   _beamGlowObject: {fileID: 7562597702039853532}
   _beamSpawnObject: {fileID: 6748943639748844207}
   _beamHeatEffect: {fileID: 6852186321307584284}
   _playerRadar: {fileID: 920655151}
   _selectableWeaponPrefab: {fileID: 6242287042472211993, guid: 012108165e7c0d34d93ec92f32ef470a,
     type: 3}
-  _numberOfSelectableWeapons: 3
+  _numberOfSelectableWeapons: 1
 --- !u!114 &1439280879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4185,17 +4185,17 @@ PrefabInstance:
     - target: {fileID: 8410848020309519935, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.08050823
+      value: 0.080508254
       objectReference: {fileID: 0}
     - target: {fileID: 8410848020309519935, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000012704877
+      value: 0.000000023843405
       objectReference: {fileID: 0}
     - target: {fileID: 8410848020309519935, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000030354393
+      value: -0.000000033306414
       objectReference: {fileID: 0}
     - target: {fileID: 8410848020309519935, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
