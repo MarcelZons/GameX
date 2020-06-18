@@ -53,6 +53,7 @@ namespace WG.GameX.Enemy
 
         private void DestroyShip()
         {
+            DependencyMediator.Instance.GameSceneManager.ReduceEnemy();
             Destroy(gameObject);
         }
 

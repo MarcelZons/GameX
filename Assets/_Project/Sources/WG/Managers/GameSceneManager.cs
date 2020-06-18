@@ -7,11 +7,16 @@ namespace WG.GameX.Managers
     {
         [SerializeField] private DependencyMediator _dependency;
         public DependencyMediator DependencyMediator => _dependency;
+
+        [SerializeField] private int _enemyCount;
+        
         private void Start()
         {
             _dependency.PlayerShipController.SecondaryWeaponReady.AddListener(
                 (message) => _dependency.UiController.SetInformationText(message, MessageType.Neutral)
             );
+
+            _enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         }
 
         private void Update()
@@ -28,9 +33,20 @@ namespace WG.GameX.Managers
             _dependency.UiController.SetEnergyHud(secondaryWeaponsReadiness);
         }
 
+        
+        
         public void GameOver(bool gameOwn)
         {
             Debug.Log($"Player won {gameOwn}");
+        }
+
+        public void ReduceEnemy()
+        {
+            _enemyCount--;
+            if (_enemyCount == 0)
+            {
+                GameOver(true);
+            }
         }
     }
 }
