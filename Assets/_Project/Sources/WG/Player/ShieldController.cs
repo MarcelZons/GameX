@@ -9,6 +9,7 @@ namespace WG.GameX.Player
     {
         [SerializeField] private Gradient _colorGradiant;
         private int _health;
+        private float _shieldRegerationTime;
         private Shield[] _shields;
 
         private void Awake()
@@ -19,9 +20,10 @@ namespace WG.GameX.Player
         private void Start()
         {
             _health = DependencyMediator.Instance.PlayerShipController.ShieldHealth;
+            _shieldRegerationTime = DependencyMediator.Instance.PlayerShipController.ShieldRegerationTime;
             foreach (var shield in _shields)
             {
-                shield.Setup(_health, _colorGradiant);
+                shield.Setup(_health, _colorGradiant, _shieldRegerationTime);
             }
         }
     }

@@ -19,6 +19,8 @@ namespace WG.GameX.Player
         private ShieldCover [] _shieldCovers;
         private ShieldCoverHitEvent[] _shieldCoverHitEvents;
         private bool _isShieldActive;
+        private float _shieldRegenarationTime;
+
         private void Awake()
         {
             _shieldColorSetter = GetComponentInChildren<ColorPropertySetter>();
@@ -43,12 +45,13 @@ namespace WG.GameX.Player
             }
         }
 
-        public void Setup(int initialHealth, Gradient colorGradiant)
+        public void Setup(int initialHealth, Gradient colorGradiant, float shieldRegerationTime)
         {
             _initialHealth = initialHealth;
             _shieldHealth = initialHealth;
             _colorGradiant = colorGradiant;
             _shieldColorSetter.SetVisibility(1f, _colorGradiant.Evaluate(1f));
+            _shieldRegenarationTime = shieldRegerationTime;
             _isShieldActive = true;
         }
         
@@ -95,8 +98,8 @@ namespace WG.GameX.Player
 
         private IEnumerator ReplenishShield()
         {
-            yield return new WaitForSeconds(5f);
-            for (var i = 0f; i <= 1; i+= Time.deltaTime/5f)
+            yield return new WaitForSeconds(_shieldRegenarationTime);
+            for (var i = 0f; i <= 1; i+= Time.deltaTime/_shieldRegenarationTime)
             {
                 _shieldColorSetter.SetVisibility(i, _colorGradiant.Evaluate(i));
                 yield return new WaitForEndOfFrame();

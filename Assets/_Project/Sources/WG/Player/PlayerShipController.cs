@@ -17,11 +17,11 @@ namespace WG.GameX.Player
         [Range(0f, 10f)] [SerializeField] private float _maxSpeed;
         [Range(0.1f, 5f)] [SerializeField] private float _accelaration;
 
-        [Space(10)] [Header("___________Health (How many hits can take)")] [SerializeField]
-        private int _health = 100;
-
+        [Space(10)] [Header("___________Health (How many hits can take)")] 
+        [SerializeField] private int _health = 100;
         [SerializeField] private int _shieldHealth = 10;
-
+        [SerializeField] private float _shieldRegerationTime = 5;
+        
         [Space(10)] [Header("___________Primary Attack Range")] [Range(100, 10000)] [SerializeField]
         private float _primaryAttackRange;
 
@@ -64,6 +64,8 @@ namespace WG.GameX.Player
         public float PrimaryWeaponShootingFrequency => _primaryWeaponShootingFrequency;
 
         public float PrimaryWeaponShootingDuration => _primaryWeaponShootingDuration;
+
+        public float ShieldRegerationTime => _shieldRegerationTime;
 
 
         private void Awake()
