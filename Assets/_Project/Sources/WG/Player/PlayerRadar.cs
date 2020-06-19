@@ -72,9 +72,7 @@ namespace WG.GameX.Player
         {
             lock (_lock)
             {
-                Debug.Log($"Removing {enemyWeakPoint.name} from {gameObject.name}");
-                _enemyWeakPoints.Remove(enemyWeakPoint);
-                Debug.Log($"{_enemyWeakPoints.Count}");                
+                _enemyWeakPoints.Remove(enemyWeakPoint);                
             }
             
         }

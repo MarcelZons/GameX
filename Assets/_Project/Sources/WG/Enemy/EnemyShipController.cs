@@ -65,6 +65,12 @@ namespace WG.GameX.Enemy
         public void RemoveWeakPoint(EnemyWeakPoint enemyWeakPoint)
         {
             _enemyWeakPoints.Remove(enemyWeakPoint);
+            
+            if (_enemyWeakPoints.Count == 0)
+            {
+                DependencyMediator.Instance.ExplosionFx.PlayMediumExplosion(transform.position);
+                DestroyShip();
+            }
         }
     }
 }

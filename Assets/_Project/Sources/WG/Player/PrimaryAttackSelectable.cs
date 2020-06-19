@@ -57,11 +57,11 @@ namespace WG.GameX.Player
             {
                 if (Input.GetMouseButton(0) && _enemyShipController != null)
                 {
-                    var weakPointTransforms = _enemyShipController.GetEnemyWeakpoints();
-
-                    if (weakPointTransforms != null)
-                        _attackController.SelectableFireCommand(weakPointTransforms, 1f,
-                            _attackController.EnemyWeakPointLayerMask, _leftOrigin, _rightOrigin);
+                    // var weakPointTransforms = _enemyShipController.GetEnemyWeakpoints();
+                    //
+                    // if (weakPointTransforms != null)
+                    //     _attackController.SelectableFireCommand(weakPointTransforms, 1f,
+                    //         _attackController.EnemyWeakPointLayerMask, _leftOrigin, _rightOrigin);
                 }
             }
 
@@ -97,12 +97,12 @@ namespace WG.GameX.Player
             {
                 _isEnemySelected = true;
                 _enemyShipController = hit.collider.gameObject.GetComponent<EnemyShipController>();
-                _aimCursorImage.color = _aimCursorMarked;
+                //_aimCursorImage.color = _aimCursorMarked;
             }
             else
             {
                 _isEnemySelected = false;
-                _aimCursorImage.color = _aimCursorNormal;
+                //_aimCursorImage.color = _aimCursorNormal;
             }
         }
     }
