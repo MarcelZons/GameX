@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WG.GameX.Enemy;
 using WG.GameX.Util;
 
 namespace WG.GameX.Player
@@ -33,8 +34,11 @@ namespace WG.GameX.Player
         private SecondaryWeapon _secondaryWeapon;
         private float _timeSinceSecondaryWeaponFired;
         private float _secondaryWeaponFillStatus;
-
+        private List<Transform> _selectableEnemyWeakPointsTransform;
         private SecondaryWeaponStatusEvent _secondaryWeaponStatus;
+
+        private SelectablePrimaryWeapon _leftPrimaryWeapon;
+        private SelectablePrimaryWeapon _rightPrimaryWeapon;
 
         public float SecondaryWeaponFilledStatus
         {
@@ -55,10 +59,15 @@ namespace WG.GameX.Player
         {
             _secondaryWeaponStatus = new SecondaryWeaponStatusEvent();
             _selectablePrimaryWeapons = new SelectablePrimaryWeapon[_numberOfSelectableWeapons];
+            
             for (int i = 0; i < _numberOfSelectableWeapons; i++)
             {
                 _selectablePrimaryWeapons[i] = Instantiate(_selectableWeaponPrefab, transform);
             }
+
+            _leftPrimaryWeapon = Instantiate(_selectableWeaponPrefab, transform);
+            _rightPrimaryWeapon = Instantiate(_selectableWeaponPrefab, transform);
+            _selectableEnemyWeakPointsTransform = new List<Transform>();
         }
 
 
@@ -114,9 +123,18 @@ namespace WG.GameX.Player
             _secondaryWeapon.Update();
         }
 
-        public void SelectableFireCommand(List<Transform> enemyWeakPoints, float hitDuration, LayerMask layerMask, Transform leftOrigin, Transform rightOrigin)
+        public void SelectableFireCommand(Transform enemyWeakPoint, float hitDuration, LayerMask layerMask, Transform origin, bool isLeftWeapon)
         {
-            StartCoroutine(IterateWeapoints(enemyWeakPoints, hitDuration, layerMask,leftOrigin, rightOrigin));
+            //StartCoroutine(IterateWeapons(enemyWeakPoint, hitDuration, layerMask,origin, isLeftWeapon));
+            if(isLeftWeapon)
+                _leftPrimaryWeapon.FireAtTarget(enemyWeakPoint, layerMask, hitDuration, origin);
+            else
+                _rightPrimaryWeapon.FireAtTarget(enemyWeakPoint, layerMask, hitDuration, origin);
+        }
+        
+        public void SelectableFireCommand(List<Transform> enemyWeakPoints, float hitDuration, LayerMask layerMask, Transform origin, Transform rightOrigin)
+        {
+            StartCoroutine(IterateWeapoints(enemyWeakPoints, hitDuration, layerMask,origin, rightOrigin));
         }
 
         private IEnumerator IterateWeapoints(List<Transform> _enemyWeakPoints, float hitDuration, LayerMask layerMask, Transform leftOrigin, Transform rightOrigin)

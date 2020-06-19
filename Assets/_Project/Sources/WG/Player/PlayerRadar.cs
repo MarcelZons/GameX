@@ -19,6 +19,9 @@ namespace WG.GameX.Player
 
         public EnemyWeakPoint GetNearestWeakPoint()
         {
+            if (_enemyWeakPoints.Count == 0)
+                return null;
+            
             var min = _enemyWeakPoints.Min(p => DistanceWithPlayer(p.transform));
             var first = _enemyWeakPoints.FirstOrDefault(p => Mathf.Approximately(DistanceWithPlayer(p.transform), min));
             return first;
@@ -47,7 +50,11 @@ namespace WG.GameX.Player
 
         public void RemoveFromList(EnemyWeakPoint enemyWeakPoint)
         {
-            _enemyWeakPoints.Remove(enemyWeakPoint);
+            if (_enemyWeakPoints.Contains(enemyWeakPoint))
+            {
+                _enemyWeakPoints.Remove(enemyWeakPoint);
+            }
+            
         }
     }
 }
