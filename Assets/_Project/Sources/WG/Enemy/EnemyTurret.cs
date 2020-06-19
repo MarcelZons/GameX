@@ -19,6 +19,7 @@ namespace WG.GameX.Enemy
         private float _activationDistance;
         private float _bulletVelocity;
         private float _turretRobustness;
+        private float _shootingOffset;
 
         public float ActivationDistance => _activationDistance;
 
@@ -30,13 +31,14 @@ namespace WG.GameX.Enemy
 
         //enemyTurret.Setup(DependencyMediator.Instance.PlayerShipController.transform, _turretActivationDistance, _turretFrequency, _bulletVelocity);
         public void Setup(Transform playerTransform, float turretActivationDistance, float turretFrequency,
-            float bulletVelocity, float turretRobustness)
+            float bulletVelocity, float turretRobustness, float shootingOffset)
         {
             _playerTransform = playerTransform;
             InvokeRepeating(nameof(ShootAtPlayer), 0, Random.Range(.15f, turretFrequency));
             _activationDistance = turretActivationDistance;
             _bulletVelocity = bulletVelocity;
             _turretRobustness = turretRobustness;
+            _shootingOffset = shootingOffset;
         }
 
         private void Update()
@@ -67,7 +69,12 @@ namespace WG.GameX.Enemy
 
             _flashController.Flash();
             var bullet = PoolManager.Instance.Get(_bulletPrefab, _originPoint.position, transform.rotation);
-            var offset = new Vector3(0, Random.Range(-10, 10), 0);
+            
+            var offset = new Vector3(
+                Random.Range(-_shootingOffset, _shootingOffset), 
+                Random.Range(-_shootingOffset, _shootingOffset), 
+                Random.Range(-_shootingOffset, _shootingOffset));
+            
             var direction = (_playerTransform.position + offset - _originPoint.position).normalized;
             bullet.GetComponent<Bullet>().Fire(direction * _bulletVelocity);
         }
