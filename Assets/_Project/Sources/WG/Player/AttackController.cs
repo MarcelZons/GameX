@@ -100,12 +100,14 @@ namespace WG.GameX.Player
             if (_playerRadar.HasEnemyWeakPoints)
             {
                 var nearestWeakPoint = _playerRadar.GetNearestWeakPoint();
-                _secondaryWeapon.FireAtTarget(_originTransform, nearestWeakPoint.transform, EnemyWeakPointLayerMask);
-                Invoke(nameof(StopSecondaryFire), 1f);
+                if (nearestWeakPoint != null)
+                {
+                    _secondaryWeapon.FireAtTarget(_originTransform, nearestWeakPoint.transform, EnemyWeakPointLayerMask);
+                    Invoke(nameof(StopSecondaryFire), 1f);  
+                    _secondaryWeapon.IsReady = false;
+                    _timeSinceSecondaryWeaponFired = 0;
+                }   
             }
-
-            _secondaryWeapon.IsReady = false;
-            _timeSinceSecondaryWeaponFired = 0;
         }
 
         private void Update()

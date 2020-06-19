@@ -12,7 +12,7 @@ namespace WG.GameX.Enemy
         [SerializeField] private Transform _verticalArm;
         [SerializeField] private Transform _horizontalArm;
         [SerializeField] private Transform _originPoint;
-        
+
         private Transform _playerTransform;
         private FlashController _flashController;
 
@@ -41,31 +41,34 @@ namespace WG.GameX.Enemy
 
         private void Update()
         {
-            if(Vector3.Distance(_playerTransform.position, transform.position) > ActivationDistance)
+            if (Vector3.Distance(_playerTransform.position, transform.position) > ActivationDistance)
                 return;
-            
+
             var direction = (_playerTransform.position - _horizontalArm.position).normalized;
             var horizontalDirection = direction;
             horizontalDirection.y = 0;
             var horizontalLookRotation = Quaternion.LookRotation(horizontalDirection);
-            _horizontalArm.rotation = Quaternion.Slerp(_horizontalArm.rotation, horizontalLookRotation, Time.deltaTime * _turretRobustness);
+            _horizontalArm.rotation = Quaternion.Slerp(_horizontalArm.rotation, horizontalLookRotation,
+                Time.deltaTime * _turretRobustness);
 
             var verticalDirection = direction;
             var verticalLookRotation = Quaternion.LookRotation(verticalDirection);
-            _verticalArm.rotation = Quaternion.Slerp(_verticalArm.rotation, verticalLookRotation, Time.deltaTime * _turretRobustness);
+            _verticalArm.rotation = Quaternion.Slerp(_verticalArm.rotation, verticalLookRotation,
+                Time.deltaTime * _turretRobustness);
         }
 
         private void ShootAtPlayer()
         {
-            if(Vector3.Distance(_playerTransform.position, transform.position) > ActivationDistance)
+            if (Vector3.Distance(_playerTransform.position, transform.position) > ActivationDistance)
                 return;
-            
+
             if (_playerTransform.position.y < transform.position.y)
                 return;
 
             _flashController.Flash();
             var bullet = PoolManager.Instance.Get(_bulletPrefab, _originPoint.position, transform.rotation);
-            var direction = (_playerTransform.position - transform.position).normalized;
+            var offset = new Vector3(0, Random.Range(-10, 10), 0);
+            var direction = (_playerTransform.position + offset - _originPoint.position).normalized;
             bullet.GetComponent<Bullet>().Fire(direction * _bulletVelocity);
         }
     }
