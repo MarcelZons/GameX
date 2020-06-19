@@ -17,6 +17,7 @@ namespace WG.GameX.Player
             _enemyShipUiTargeter = GetComponentInChildren<EnemyShipUiTargeter>();
             _enemyShipUiTargeter.SetEnemyName(gameObject.name);
             _shipNameText.text = gameObject.name;
+            ShowTopUi(false);
         }
 
         private void Start()
@@ -26,6 +27,7 @@ namespace WG.GameX.Player
 
         private void ShowTopUi(bool state)
         {
+            state = false;
             _topUiHealthBarImageBg.enabled = state;
             _topUiHealthBarImageFg.enabled = state;
             _shipNameText.enabled = state;

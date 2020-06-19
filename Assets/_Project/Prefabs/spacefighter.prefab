@@ -2364,6 +2364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalDamping: 3
   _verticalDamping: 0
+  _forwardMovementMovementum: 5
 --- !u!114 &1235396420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4566,12 +4567,12 @@ PrefabInstance:
     - target: {fileID: 8410848020187824296, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000018159226
+      value: 0.00000000221681
       objectReference: {fileID: 0}
     - target: {fileID: 8410848020187824296, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000789139
+      value: 0.000000078924145
       objectReference: {fileID: 0}
     - target: {fileID: 8410848020187824296, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
@@ -4701,12 +4702,12 @@ PrefabInstance:
     - target: {fileID: 8410848021022522374, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000034366675
+      value: -0.00000003436667
       objectReference: {fileID: 0}
     - target: {fileID: 8410848021022522374, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000017804073
+      value: 0.0000000017804072
       objectReference: {fileID: 0}
     - target: {fileID: 8410848021022522374, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}

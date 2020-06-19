@@ -7,17 +7,23 @@ namespace WG.GameX.Player
     public class PlayerInputController : MonoBehaviour
     {
         [Header("########### Tuning components")]
-        [Space(20)] [Header("Damping Values: (Low to High) = (Slower to Agile)")] [Range(0.1f, 5f)] [SerializeField]
+        [Space(20)]
+        [Header("Damping Values: (Low to High) = (Slower to Agile)")]
+        [Range(0.1f, 5f)]
+        [SerializeField]
         private float _horizontalDamping;
 
         [Range(0.0f, 5f)] [SerializeField] private float _verticalDamping;
 
         [Header("#######################################")]
         private float _horizontal;
+
         private float _vertical;
         private Vector2 _mouseDragHorizontal = new Vector2();
         private bool _isShooting;
 
+        [Header("Low is Faster...... High is slower")] [SerializeField]
+        public float _forwardMovementMovementum = 5;
 
         public float Horizontal => _horizontal;
         public float Vertical => _vertical;
@@ -51,7 +57,7 @@ namespace WG.GameX.Player
 
             if (IsMovementLocked)
             {
-                _horizontal = Horizontal.GetSmoothDamping(0, _horizontalDamping* 10);
+                _horizontal = Horizontal.GetSmoothDamping(0, _horizontalDamping * 10);
             }
             else
             {
@@ -59,7 +65,21 @@ namespace WG.GameX.Player
                 _vertical = Vertical.GetSmoothDamping(Input.GetAxis("Vertical"), _verticalDamping);
             }
 
-            MouseScroll = Input.mouseScrollDelta.y;
+            //MouseScroll = Input.GetAxis("Vertical")* .1f; //Input.mouseScrollDelta.y;
+            // if (Input.GetKey(KeyCode.W))
+            // {
+            //     MouseScroll = Time.deltaTime/10* Input.GetAxis("Vertical");
+            //     
+            // }else if (Input.GetKey(KeyCode.S))
+            // {
+            //     MouseScroll = -Time.deltaTime/10;
+            // }
+            // else
+            // {
+            //     MouseScroll = 0;
+            // }
+
+            MouseScroll = Time.deltaTime * Input.GetAxis("Vertical") / _forwardMovementMovementum;
             _mouseDragHorizontal = _mouseDragHorizontal.GetSmoothDamping(mouseClickDrag.GetMouseDrag(), 5f);
 
 

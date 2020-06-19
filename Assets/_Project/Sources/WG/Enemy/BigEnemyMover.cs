@@ -9,8 +9,11 @@ namespace WG.GameX.Enemy
         private float _moveMentSpeed;
 
         [Range(.01f, 1f)] [SerializeField] private float _turnSpeed;
+        [SerializeField] private float _verticalDistanceFromPlayer = 50;
+        
         private Transform _playerTransform;
         private Transform _transform;
+        
 
         private bool _isCloseWithOtherEnemy;
 
@@ -27,7 +30,7 @@ namespace WG.GameX.Enemy
             if (_isCloseWithOtherEnemy == false)
             {
                 var target = _playerTransform.position;
-                target.y -= 50;
+                target.y -= _verticalDistanceFromPlayer;
                 var direction = (target - _transform.position).normalized;
 
                 _transform.position += (direction * (Time.deltaTime * _moveMentSpeed));
