@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using WG.GameX.Managers;
 using WG.GameX.Player;
 
@@ -27,9 +28,9 @@ namespace WG.GameX.Enemy
                 _enemyShipController.RemoveWeakPoint(this);
                 _playerShipController.RemoveFromRadar(this);
                 //Debug.LogError($"Weakpoint {gameObject.name} can be destroyed");
-                Destroy(this.gameObject);
+                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
-
     }
 }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using WG.GameX.Enemy;
 
 namespace WG.GameX.Player
@@ -10,35 +8,38 @@ namespace WG.GameX.Player
     public class PlayerShipController : MonoBehaviour
     {
         [Header("##########Tuning Components of Player ####################")]
-        [Space(10)] 
+        [Space(10)]
         [Header("___________Movement___________________")]
-        [Range(0, 5f)] [SerializeField] private float _minSpeed;
+        [Range(0, 5f)]
+        [SerializeField]
+        private float _minSpeed;
 
         [Range(0f, 10f)] [SerializeField] private float _maxSpeed;
         [Range(0.1f, 5f)] [SerializeField] private float _accelaration;
 
-        [Space(10)] 
-        [Header("___________Health (How many hits can take)")]
-        [SerializeField] private int _health = 100;
+        [Space(10)] [Header("___________Health (How many hits can take)")] [SerializeField]
+        private int _health = 100;
 
         [SerializeField] private int _shieldHealth = 10;
 
-        [Space(10)] [Header("___________Primary Attack Range")]
-         
-        [Range(100,10000)]
-        [SerializeField]
+        [Space(10)] [Header("___________Primary Attack Range")] [Range(100, 10000)] [SerializeField]
         private float _primaryAttackRange;
-        
-        [Space(20)]
-        [Header("##############################")]
-        
-        [SerializeField] private Transform _shipTransform;
+
+        [SerializeField] private float _primaryWeaponShootingFrequency;
+        [SerializeField] private float _primaryWeaponShootingDuration;
+
+
+        [Space(20)] [Header("##############################")] [SerializeField]
+        private Transform _shipTransform;
+
         [SerializeField] private Transform _pivotTransform;
         [SerializeField] private Transform _lookAtReferenceMiddle;
         [SerializeField] private Transform _lookAtReferenceBottom;
         [SerializeField] private List<Transform> _gunPoints;
         [SerializeField] private PlayerRadar _playerRadar;
-        
+        [SerializeField] private PlayerRadar _playerLeftRadar;
+        [SerializeField] private PlayerRadar _playerRightRadar;
+
         private PlayerCameraController _playerCameraController;
         private PlayerShipMovement _playerShipMovement;
         private PlayerInputController _playerInputController;
@@ -49,12 +50,20 @@ namespace WG.GameX.Player
         public float SecondaryWeaponFilledStatus => _attackController.SecondaryWeaponFilledStatus;
         public SecondaryWeaponStatusEvent SecondaryWeaponReady => secondaryWeaponReady;
         public Camera MainCamera => _playerCameraController.CameraComponent;
-        
+
         public int Health => _health;
 
         public int ShieldHealth => _shieldHealth;
 
         public float PrimaryAttackRange => _primaryAttackRange;
+
+        public PlayerRadar PlayerLeftRadar => _playerLeftRadar;
+
+        public PlayerRadar PlayerRightRadar => _playerRightRadar;
+
+        public float PrimaryWeaponShootingFrequency => _primaryWeaponShootingFrequency;
+
+        public float PrimaryWeaponShootingDuration => _primaryWeaponShootingDuration;
 
 
         private void Awake()
@@ -105,6 +114,9 @@ namespace WG.GameX.Player
         public void RemoveFromRadar(EnemyWeakPoint enemyWeakPoint)
         {
             _playerRadar.RemoveFromList(enemyWeakPoint);
+            _playerLeftRadar.RemoveFromList(enemyWeakPoint);
+            _playerRightRadar.RemoveFromList(enemyWeakPoint);
+            
         }
 
         private void OnCollisionEnter(Collision other)

@@ -8,6 +8,7 @@ TagManager:
   - EnemyWeakPoint
   - Bullet
   - Earth Clouds
+  - BulletCollidable
   layers:
   - Default
   - TransparentFX

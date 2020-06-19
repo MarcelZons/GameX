@@ -27,6 +27,18 @@ namespace WG.GameX.Player
             _beamHitEffect.SetActive(false);
         }
 
+        public void FireAtTarget(Transform target, LayerMask layerMask, float duration, Transform origin)
+        {
+            if(target == null)
+                return;
+            
+            _origin = origin;
+            _target = target;
+            _layerMask = layerMask;
+            SetFxStatus(true);
+            Invoke(nameof(StopFire),duration);
+        }
+        
         public void FireAtTarget(Transform target, LayerMask layerMask, float duration, Transform leftOrigin, Transform rightOrigin)
         {
             if(target == null)

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using VSX.UniversalVehicleCombat;
 using WG.GameX.Managers;
 
@@ -16,6 +17,10 @@ namespace WG.GameX.Enemy
 
         [Range(1,100)]
         [SerializeField] private float _turretRobustness;
+
+        [FormerlySerializedAs("_turretAccuracy")]
+        [Header("0 = Highly accurate... 10(or more) = Low Accuracy")]
+        [SerializeField] private float _turretShootingOffset = 10;
         
         [Header("###############################")]
         [SerializeField] private LayerMask _weakpointLayer;
@@ -35,7 +40,7 @@ namespace WG.GameX.Enemy
         {
             foreach (var enemyTurret in _enemyTurrets)
             {
-                enemyTurret.Setup(DependencyMediator.Instance.PlayerShipController.transform, _turretActivationDistance, _turretFrequency, _bulletVelocity, _turretRobustness);
+                enemyTurret.Setup(DependencyMediator.Instance.PlayerShipController.transform, _turretActivationDistance, _turretFrequency, _bulletVelocity, _turretRobustness, _turretShootingOffset);
             }
         }
 
