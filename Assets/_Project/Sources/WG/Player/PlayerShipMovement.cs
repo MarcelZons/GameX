@@ -18,7 +18,7 @@ namespace WG.GameX.Player
         private readonly Rigidbody _rigidBody;
         private float _forwardSpeed;
         private float _lerpedForwardMovementSpeed;
-		private float horizontalValueMax = 0.1f;
+		private float horizontalValueMax = 0.03f;
 
         public float SpeedFactor => _forwardSpeed / _maxSpeed;
 

@@ -1025,7 +1025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _turretActivationDistance: 450
   _turretFrequency: 3
-  _bulletVelocity: 500
+  _bulletVelocity: 600
   _turretRobustness: 6.8
   _turretShootingOffset: 20
   _weakpointLayer:
@@ -1074,6 +1074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveMentSpeed: 18.6
   _turnSpeed: 0.089
+  _verticalDistanceFromPlayer: 80
 --- !u!1 &8440956887211272284
 GameObject:
   m_ObjectHideFlags: 0
