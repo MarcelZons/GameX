@@ -2334,11 +2334,12 @@ MonoBehaviour:
   _minSpeed: 0
   _maxSpeed: 0.6
   _accelaration: 0.4
-  _health: 10
-  _shieldHealth: 20
+  _health: 5
+  _shieldHealth: 5
+  _shieldRegerationTime: 10
   _primaryAttackRange: 450
-  _primaryWeaponShootingFrequency: 1
-  _primaryWeaponShootingDuration: 1
+  _primaryWeaponShootingFrequency: 3
+  _primaryWeaponShootingDuration: 2
   _shipTransform: {fileID: 9054589662134478836}
   _pivotTransform: {fileID: 6727699861986602700}
   _lookAtReferenceMiddle: {fileID: 6522820289056307725}
@@ -4570,17 +4571,17 @@ PrefabInstance:
     - target: {fileID: 8410848020309519935, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.08050823
+      value: 0.080508254
       objectReference: {fileID: 0}
     - target: {fileID: 8410848020309519935, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000012704877
+      value: 0.000000023843405
       objectReference: {fileID: 0}
     - target: {fileID: 8410848020309519935, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000030354393
+      value: -0.000000033306414
       objectReference: {fileID: 0}
     - target: {fileID: 8410848020309519935, guid: 2b7af93e62cbe8044baba9f163563b4a,
         type: 3}
